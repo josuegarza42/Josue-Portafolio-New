@@ -5,18 +5,14 @@ import worldData from "../lib/world.json";
 const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
 
-  const visitedCountries = [
-    "France",
-    "China",
-    "Italy",
-    "Sri Lanka",
-    "Turkey",
-    "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
-  ];
+const visitedCountries = [
+  "Canada",      // Canadá
+  "Colombia",    // Colombia (el nombre es igual en inglés)
+  "Mexico",      // México (sin acento en inglés)
+  "Costa Rica",  // Costa Rica (igual en inglés)
+  "Ecuador",     // Ecuador (igual en inglés)
+  "Guatemala"    // Guatemala (igual en inglés)
+];
 
   onMount(() => {
     if (!mapContainer) return;

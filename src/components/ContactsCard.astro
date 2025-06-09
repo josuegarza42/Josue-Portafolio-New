@@ -10,27 +10,33 @@ import { LINKS } from "../lib/constants";
         Let's start working together!
       </h1>
     </header>
+
     <address class="flex flex-col mt-4">
       <h2 class="text-gray-500">Contact Details</h2>
-      <p>contact@gianmarcocavallo.com</p>
-      <p>Italy</p>
+     <a
+          href="mailto:josuegarza.dev@gmail.com"
+          class="text-red-500 hover:text-red-700 transition-colors"
+        >
+          josuegarza.dev@gmail.com
+        </a>
     </address>
+
+     <p class="text-gray-400 mt-2">
+        <h2 class="text-gray-500">Location</h2>
+        <span>Ciudad de Mexico, Mexico</span>
+      </p>
+
     <div class="flex flex-col mt-4 w-fit">
-      <h2 class="text-gray-500">Socials</h2>
+
       <ul>
-        <li>
-          <a href={LINKS.linkedin} target="_blank">Linkedin</a>
-        </li>
-        <li>
-          <a href={LINKS.github} target="_blank">Github</a>
-        </li>
-        <li>
-          <a href={LINKS.medium} target="_blank">Medium</a>
-        </li>
-        <li>
-          <a href={LINKS.discord} target="_blank">Discord</a>
-        </li>
+      <a
+       class="text-red-500 hover:text-red-700 transition-colors"
+            href={LINKS.resume}
+            target="_blank">Resume</a
+          >
       </ul>
     </div>
   </div>
 </Card>
+
+

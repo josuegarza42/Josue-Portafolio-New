@@ -65,7 +65,7 @@ const posts = (await getCollection("blog"))?.sort(
       colSpan="md:col-span-1"
       href="/blog"
       rowSpan="md:row-span-2 flex gap-1"
-      title="Blog"
+      title="Work Experience & Projects"
     >
       <div class="flex flex-col gap-1">
         {
@@ -94,12 +94,14 @@ const posts = (await getCollection("blog"))?.sort(
       </div>
     </Card>
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <p class="text-xs">
-        © 2024 · Crafted with ♥️ using <a
-          class="text-red-500"
-          href="https://astro.build/"
-          target="_blank">Astro</a
-        > by Gianmarco.
+            <p class="text-sm font-light">
+        &copy; 2025 Josue Garza. | Built with Astro.
+        <a
+          href="https://github.com/josuegarza42/josuegarza42.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-1 text-blue-400 hover:underline">View Source</a
+        >
       </p>
     </Card>
   </main>
