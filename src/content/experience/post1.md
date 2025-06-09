@@ -14,7 +14,7 @@ category: "intro"
 - San Luis Potosí, Mexico
 ---
 ## **Role Summary:**
-- As a Project Manager at Softdone, my responsibilities encompass the development and management of accurate budgets using AgilePM, along with drafting comprehensive contracts to outline client expectations and project scope. I have been managing projects skillfully throughout their lifecycle, employing various agile methodologies such as Agile, Scrum, Waterfall, and Kanban. This approach ensures adaptive and efficient progression of projects.
+As a Project Manager at Softdone, my responsibilities encompass the development and management of accurate budgets using AgilePM, along with drafting comprehensive contracts to outline client expectations and project scope. I have been managing projects skillfully throughout their lifecycle, employing various agile methodologies such as Agile, Scrum, Waterfall, and Kanban. This approach ensures adaptive and efficient progression of projects.
 ---
 ### **Key Responsibilities and Achievements:**
 - Skilled management of project lifecycles using a range of agile methodologies.
@@ -39,5 +39,5 @@ category: "intro"
 - Figma
 ---
 ## **Role Summary:**
-- As a Web Developer, I am proficient in creating responsive and visually appealing websites using React, HTML, CSS, Tailwind CSS, and Astro, with a strong focus on delivering optimal UI/UX. Skilled in understanding and implementing client requirements, I ensure that every web page accurately reflects the client's needs and is responsive across various devices. Utilizing agile methodologies, I manage and adapt to project dynamics efficiently, ensuring timely delivery and high-quality web solutions.
+As a Web Developer, I am proficient in creating responsive and visually appealing websites using React, HTML, CSS, Tailwind CSS, and Astro, with a strong focus on delivering optimal UI/UX. Skilled in understanding and implementing client requirements, I ensure that every web page accurately reflects the client's needs and is responsive across various devices. Utilizing agile methodologies, I manage and adapt to project dynamics efficiently, ensuring timely delivery and high-quality web solutions.
 ---
