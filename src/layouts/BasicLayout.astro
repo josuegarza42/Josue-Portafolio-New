@@ -12,8 +12,8 @@ interface Props {
 const { title, description, page, pubDate } = Astro.props;
 const image =
   page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
-    : `${Astro.url.origin}/og-image.png`;
+    ? `${Astro.url.origin}/og-image2.png"`
+    : `${Astro.url.origin}/og-image2.png`;
 
 const schema =
   page !== "blog"
@@ -23,7 +23,7 @@ const schema =
         name: "Josue",
         url: Astro.url.origin,
         sameAs: [LINKS.linkedin, LINKS.github],
-        image: `${Astro.url.origin}/og-image.png`,
+        image: `${Astro.url.origin}/og-image2.png`,
         jobTitle: "Freelance Frontend Developer",
         worksFor: {
           "@type": "Organization",
@@ -31,12 +31,12 @@ const schema =
           address: {
             "@type": "PostalAddress",
             addressLocality: "Mexico",
-            addressCountry: "IT",
+            addressCountry: "MX",
           },
         },
         nationality: {
           "@type": "Country",
-          name: "Italy",
+          name: "Mexico",
         },
       }
     : {
@@ -48,7 +48,7 @@ const schema =
         },
         headline: title || title,
         description: description || title,
-        image: `${Astro.url.origin}/og-image.png`, //TODO: dynamic
+        image: `${Astro.url.origin}/og-image2.png`, //TODO: dynamic
         author: {
           "@type": "Person",
           name: "Josue",
@@ -60,7 +60,7 @@ const schema =
           name: "Josue",
           logo: {
             "@type": "ImageObject",
-            url: `${Astro.url.origin}/og-image.png`,
+            url: `${Astro.url.origin}/og-image2.png`,
           },
         },
         datePublished: pubDate || new Date().toISOString(),
@@ -84,7 +84,7 @@ const schema =
     <meta content="website" property="og:type" />
     <meta content={Astro.url.origin} property="og:url" />
     <meta
-      content={image || `${Astro.url.origin}/og-image.png`}
+      content={image || `${Astro.url.origin}/og-image2.png`}
       property="og:image"
     />
     <!-- Basic Twitter Card tags -->
@@ -92,7 +92,7 @@ const schema =
     <meta content={title} name="twitter:title" />
     <meta content={description} name="twitter:description" />
     <meta
-      content={image || `${Astro.url.origin}/og-image.png`}
+      content={image || `${Astro.url.origin}/og-image2.png`}
       name="twitter:image"
     />
 
