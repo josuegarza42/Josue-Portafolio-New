@@ -11,7 +11,9 @@ const visitedCountries = [
   "Mexico",      // México (sin acento en inglés)
   "Costa Rica",  // Costa Rica (igual en inglés)
   "Ecuador",     // Ecuador (igual en inglés)
-  "Guatemala"    // Guatemala (igual en inglés)
+  "Guatemala",   // Guatemala (igual en inglés)
+  "Peru",     // Peru (igual en inglés)
+
 ];
 
   onMount(() => {
