@@ -8,7 +8,7 @@ category: "experience"
 
 # **Position Overview:**
 - Senior Specialist, Enterprise Support
-- May 2024 - Present
+- May 2024 - Sep 2025
 - Qualtrics
 - Full-time, Remote - Ciudad de México, México
 ---
