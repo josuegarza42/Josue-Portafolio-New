@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "Senior Specialist, Enterprise Support at Qualtrics"
+title: "Senior EPS at Qualtrics"
 description: "Leading enterprise support for complex technical environments at Qualtrics, focusing on advanced troubleshooting, client satisfaction, and process optimization."
 pubDate: 2024-05-13
 category: "experience"
