@@ -3,6 +3,7 @@ layout: ../../layouts/LayoutBlogPost.astro
 title: "Customer Technical Support at Telmex"
 description: "Role as Customer Technical Support at Telmex, focusing on remote connection repair and maintenance, modem programming, and exceptional customer service. Skills in customer service, technical support, and network administration were enhanced."
 pubDate: 2020-01-21
+period: "Nov 2018 — Jan 2020"
 category: "intro"
 ---
 

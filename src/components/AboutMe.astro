@@ -1,29 +1,24 @@
 ---
 import Card from "./Card/index.astro";
+import { PROFILE } from "../data/profile";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
-  <div class="flex flex-col gap-2">
-    <p class="text-sm font-light">
-      Hi, I'm <b class="font-bold">Josue</b>, a <b class="font-bold"
-        >solutions-focused Customer Experience (CX) professional</b
-      > with a <b class="font-bold">Systems Engineering</b> background. I specialize
-      in translating complex business requirements into scalable, <b
-        class="font-bold">AI-driven solutions</b
-      > that redefine the enterprise support journey.
-    </p>
-    <p class="text-sm font-light">
-      My core expertise includes end-to-end <b class="font-bold"
-        >solution design</b
-      >, <b class="font-bold">CX automation</b>, strategic <b class="font-bold"
-        >escalation management</b
-      >, and <b class="font-bold">agile project delivery</b>.
-    </p>
-    <p class="text-sm font-light">
-      I am driven by a commitment to not just solve problems, but to <b
-        class="font-bold">architect lasting improvements</b
-      > that boost efficiency and deliver an exceptional, measurable impact on the
-      <b class="font-bold">customer experience</b>.
-    </p>
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-6" title="About me">
+  <div class="about-copy">
+    <p>I work at the intersection of customer experience, professional services, and technology.</p>
+    <p>My focus is solution design, CRM implementation, support automation, and leading projects from scoping to delivery.</p>
+    <h3>Engineering foundation</h3>
+    <p>{PROFILE.education}<br /><span>{PROFILE.university}</span></p>
+    <h3>How I work</h3>
+    <p>Clear stakeholder communication, Agile delivery, and practical guidance that helps teams adopt the solutions we build.</p>
+    <a href="/blog#education">Education & skills →</a>
   </div>
 </Card>
+
+<style>
+  .about-copy { color: #c3c3c3; font-size: .9rem; line-height: 1.7; }
+  p { margin: .9rem 0; }
+  h3 { margin: 1.25rem 0 .25rem; font-size: .85rem; font-weight: 700; color: #f5f5f5; }
+  span { color: #a3a3a3; }
+  a { color: var(--color-primary-500); text-underline-offset: .25rem; }
+</style>

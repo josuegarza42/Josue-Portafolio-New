@@ -1,31 +1,25 @@
 ---
-layout: ../../layouts/LayoutBlogPost.astro
 title: "Associate Services Consultant at Zendesk"
-description: "Spearheading the design and deployment of Advanced AI & Automation (AIAA) solutions within the Zendesk ecosystem. Focusing on Intelligent Triage and conversational bots to drive deflection and optimize CX for enterprise clients."
+description: "Advanced AI & Automation, Intelligent Triage, conversational bots, and end-to-end Zendesk implementations."
 pubDate: 2025-09-01
-category: "experience"
+period: "Sep 2025 — Present"
 ---
 
-[**Link to Zendesk**](https://www.zendesk.com)
+## Role
 
-# **Project Overview:**
+**[Zendesk](https://www.zendesk.com/) · Mexico City, Mexico**
 
-- Sep 2025 - Present
-- Associated with Zendesk (Mexico City, Hybrid)
+Design and deploy Advanced AI & Automation (AIAA) solutions that translate complex customer requirements into scalable support workflows.
 
-# **Role Summary:**
-As an Associate Services Consultant, I spearhead the design and deployment of Advanced AI & Automation (AIAA) solutions within the Zendesk ecosystem. My primary focus is on configuring Intelligent Triage and advanced conversational bots to automate complex use cases, reduce manual ticket volume, and drive measurable deflection for enterprise clients, ensuring a seamless transition from legacy systems to a modern CX environment.
+## Contributions
 
-# **Management and Development:**
-- Orchestrate the end-to-end technical implementation of the Zendesk Product Suite (Support, Guide, Chat, Explore), translating unique business requirements into scalable workflows.
-- Analyze and optimize client support operations by diagnosing process inefficiencies and prescribing best-practice automation strategies to enhance agent productivity and CSAT scores.
-- Facilitate seamless collaboration between client stakeholders and internal Engineering, Product, and Sales teams, ensuring transparent communication and mitigating technical risks.
-- Empower client administrators and support teams through specialized knowledge transfer sessions and workshops focused on AIAA adoption to maximize ROI.
+- Configure Intelligent Triage and conversational bots to automate complex use cases and reduce manual ticket volume.
+- Lead end-to-end technical implementation across **Support, Guide, Chat, Explore, and Ultimate**, helping clients migrate from legacy systems.
+- Analyze support operations and recommend automation strategies to improve agent productivity and customer satisfaction (CSAT).
+- Connect client stakeholders and engineering teams to deliver solutions aligned with strategic business goals.
 
-# **Key Skills:**
-- Zendesk Product Suite
-- Advanced AI & Automation (AIAA)
-- Intelligent Triage & Bots
-- Process Optimization
-- Technical Implementation
-- Stakeholder Management
+- Deliver knowledge transfer workshops for client administrators and support teams to support adoption and long-term self-sufficiency.
+
+## Core skills
+
+Zendesk · Advanced AI & Automation · Intelligent Triage · Conversational bots · CRM implementation · Solution design · Stakeholder communication

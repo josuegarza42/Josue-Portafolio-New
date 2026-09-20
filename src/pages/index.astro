@@ -7,96 +7,75 @@ import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
-import { getCollection } from "astro:content";
-import { formatDate } from "../lib/helpers";
-
-const posts = (await getCollection("blog"))?.sort(
-  (blogEntryA, blogEntryB) =>
-    (blogEntryB.data.pubDate || new Date()).getTime() -
-    (blogEntryA.data.pubDate || new Date()).getTime()
-);
+import { EXPERIENCE, PROFILE } from "../data/profile";
+import { AWARDS, CREDENTIALS, PORTFOLIO_PROJECTS, WORK_HISTORY } from "../data/career";
+import { VISITED_COUNTRIES } from "../data/travel";
 ---
 
 <script>
-  import { stagger, animate, type AnimationSequence } from "motion";
-  import { loaderAnimation } from "../lib/constants";
+  import { stagger, animate } from "motion";
+  animate(".loader", { opacity: 0, pointerEvents: "none" }, { duration: .15 });
   const cards = document.querySelectorAll(".card");
-
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        type: "spring",
-        at: "-0.1",
-        delay: stagger(0.3),
-      },
-    ],
-  ];
-
-  animate(sequence as AnimationSequence);
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    animate(cards, { y: 0, opacity: 1 }, { duration: 0 });
+  } else {
+    animate(cards, { y: [20, 0], opacity: [0, 1] }, { duration: .4, delay: stagger(.05) });
+  }
 </script>
 
-<Layout
-  description="Senior Enterprise Support Specialist passionate about optimizing complex technical environments and ensuring exceptional service delivery for enterprise clients."
-  title="Josue Garza - Portafolio"
->
-  <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
-  >
+<Layout description={PROFILE.description} title="Josue Garza | CX, AI & Automation">
+  <main class="portfolio text-white m-auto grid gap-4 max-w-6xl relative w-full p-4 md:p-6 md:grid-cols-2 lg:grid-cols-4">
     <IntroCard />
     <AboutMe />
     <ContactsCard />
     <TimeZone />
     <Now />
-    <Card
-      colorText="text-neutral-900"
-      colSpan="md:col-span-1"
-      href="travel"
-      rowSpan="md:row-span-1"
-      title="Countries I visited"
-    >
-      <div class="h-full w-full absolute inset-0 -z-10">
-        <Globe client:load />
-      </div>
+    <Card colSpan="md:col-span-1" href="/travel" rowSpan="lg:row-span-2" title="Countries I've visited">
+      <p class="country-count">{VISITED_COUNTRIES.length} countries and counting</p>
+      <div class="globe-preview" aria-hidden="true"><Globe client:visible /></div>
     </Card>
-    <Card
-      colSpan="md:col-span-1"
-      href="/blog"
-      rowSpan="md:row-span-2 flex gap-1"
-      title="Work Experience"
-    >
-      <div class="flex flex-col gap-1">
-        {
-          posts?.slice(0, 3).map((post) => (
-            // <a
-            //   class="text-sm md:text-base decoration-none flex justify-between"
-            //   href={`/blog/${post.id}`}
-            // >
-            <div class="list-none w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-0">
-              <p class="inline-block whitespace-nowrap text-xs">
-                {post.data.title}
-              </p>
-              {post.data.pubDate && (
-                <time
-                  class="text-right tabular-nums text-xs"
-                  data-date={post.data.pubDate.toISOString()}
-                  datetime={post.data.pubDate.toISOString()}
-                >
-                  {formatDate(post.data.pubDate)}
-                </time>
-              )}
-            </div>
-            // </a>
-          ))
-        }
-      </div>
+    <Card colSpan="md:col-span-1" href="/blog" rowSpan="lg:row-span-4" title="Career highlights">
+      <ol class="experience-preview">
+        {EXPERIENCE.map((job) => (
+          <li>
+            <span class="company">{job.company}</span>
+            <span class="job-role">{job.role}</span>
+            <span class="job-period">{job.period}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="all-experience">Explore all {WORK_HISTORY.length} roles →</p>
     </Card>
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-            <p class="text-sm font-light">
-        &copy; 2026 Josue Garza. All rights reserved.
-      </p>
+    <Card colSpan="md:col-span-1" rowSpan="lg:row-span-2">
+      <a class="projects-link" href="/blog">Experience & beyond →</a>
+      <p class="journey-intro">The projects, learning, and communities behind my work.</p>
+      <ul class="journey-links">
+        <li><a href="/blog#projects">{PORTFOLIO_PROJECTS.length} projects <span aria-hidden="true">↗</span></a></li>
+        <li><a href="/blog#recognition">{AWARDS.length} honors & awards <span aria-hidden="true">↗</span></a></li>
+        <li><a href="/blog#certifications">{CREDENTIALS.length} credentials <span aria-hidden="true">↗</span></a></li>
+        <li><a href="/blog#community">Community & founding <span aria-hidden="true">↗</span></a></li>
+      </ul>
+      <p class="copyright">&copy; {new Date().getFullYear()} {PROFILE.name}</p>
     </Card>
   </main>
 </Layout>
+
+<style>
+  .portfolio { align-items: stretch; }
+  .portfolio :global(.card) { min-width: 0; transform: none; }
+  .experience-preview { list-style: none; padding: 0; margin: .5rem 0 0; }
+  .experience-preview li { display: flex; flex-direction: column; gap: .25rem; padding: .85rem 0; border-bottom: 1px solid #343434; }
+  .experience-preview li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .company { font-weight: 700; font-size: .95rem; }
+  .job-role { font-size: .8rem; line-height: 1.5; color: #d4d4d4; }
+  .job-period { color: #a3a3a3; font-size: .75rem; }
+  .country-count { color: #bfbfbf; margin: .5rem 0; font-size: .85rem; }
+  .globe-preview { width: 100%; height: 130px; }
+  .projects-link { color: var(--color-primary-500); font-size: .9rem; line-height: 1.6; text-underline-offset: .25rem; }
+  .all-experience { color: var(--color-primary-500); font-size: .8rem; margin: 1rem 0 0; }
+  .journey-intro { color: #bfbfbf; font-size: .8rem; line-height: 1.65; margin: .75rem 0; }
+  .journey-links { list-style: none; padding: 0; margin: 0; }
+  .journey-links a { display: flex; justify-content: space-between; gap: .5rem; color: #d4c9e3; font-size: .78rem; padding: .65rem 0; border-bottom: 1px solid #38313f; text-decoration: none; }
+  .journey-links a:hover { color: var(--color-primary-400); }
+  .copyright { color: #a3a3a3; font-size: .75rem; margin-top: 1rem; }
+</style>

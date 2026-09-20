@@ -1,83 +1,51 @@
-import { onMount } from "solid-js";
+import { onCleanup, onMount } from "solid-js";
 import * as d3 from "d3";
+import type { FeatureCollection, Geometry } from "geojson";
 import worldData from "../lib/world.json";
+import { VISITED_COUNTRIES } from "../data/travel";
+
+const visitedNames = new Set(VISITED_COUNTRIES.map((country) => country.mapName));
+const world = worldData as FeatureCollection<Geometry, { name: string }>;
 
 const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
-
-const visitedCountries = [
-  "Canada",      // Canadá
-  "Colombia",    // Colombia (el nombre es igual en inglés)
-  "Mexico",      // México (sin acento en inglés)
-  "Costa Rica",  // Costa Rica (igual en inglés)
-  "Ecuador",     // Ecuador (igual en inglés)
-  "Guatemala",   // Guatemala (igual en inglés)
-  "Peru",     // Peru (igual en inglés)
-
-];
-
   onMount(() => {
     if (!mapContainer) return;
+    const projection = d3.geoOrthographic().scale(235).rotate([95, -20]).translate([250, 250]);
+    const path = d3.geoPath(projection);
+    const svg = d3.select(mapContainer).append("svg")
+      .attr("viewBox", "0 0 500 500").attr("width", "100%").attr("height", "100%")
+      .attr("role", "img").attr("aria-label", "Visited countries highlighted on a globe");
+    svg.append("title").text(`Visited: ${VISITED_COUNTRIES.map((country) => country.name).join(", ")}`);
+    svg.append("circle").attr("cx", 250).attr("cy", 250).attr("r", 235).attr("fill", "#202020");
+    const countries = svg.append("g").selectAll("path").data(world.features).join("path")
+      .attr("d", (feature) => path(feature))
+      .attr("data-country", (feature) => feature.properties.name)
+      .attr("data-visited", (feature) => String(visitedNames.has(feature.properties.name)))
+      .attr("fill", (feature) => visitedNames.has(feature.properties.name) ? "var(--color-primary-500)" : "#d4d4d4")
+      .attr("stroke", "#171717").attr("stroke-width", .4);
+    countries.append("title").text((feature) => feature.properties.name === "USA" ? "United States" : feature.properties.name);
 
-    const width = mapContainer.clientWidth;
-    const height = 500;
-    const sensitivity = 75;
-
-    let projection = d3
-      .geoOrthographic()
-      .scale(250)
-      .center([0, 0])
-      .rotate([0, -30])
-      .translate([width / 2, height / 2]);
-
-    const initialScale = projection.scale();
-    let pathGenerator = d3.geoPath().projection(projection);
-
-    let svg = d3
-      .select(mapContainer)
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-    svg
-      .append("circle")
-      .attr("fill", "#EEE")
-      .attr("stroke", "#000")
-      .attr("stroke-width", "0.2")
-      .attr("cx", width / 2)
-      .attr("cy", height / 2)
-      .attr("r", initialScale);
-
-    let map = svg.append("g");
-
-    map
-      .append("g")
-      .attr("class", "countries")
-      .selectAll("path")
-      .data(worldData.features)
-      .enter()
-      .append("path")
-      .attr("d", (d: any) => pathGenerator(d as any))
-      .attr("fill", (d: { properties: { name: string } }) =>
-        visitedCountries.includes(d.properties.name) ? "#E63946" : "white"
-      )
-      .style("stroke", "black")
-      .style("stroke-width", 0.3)
-      .style("opacity", 0.8);
-
-    d3.timer(() => {
-      const rotate = projection.rotate();
-      const k = sensitivity / projection.scale();
-      projection.rotate([rotate[0] - 1 * k, rotate[1]]);
-      svg.selectAll("path").attr("d", (d: any) => pathGenerator(d as any));
-    }, 200);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: d3.Timer | undefined;
+    const updateMotion = () => {
+      timer?.stop();
+      if (reducedMotion.matches) return;
+      const rotation = projection.rotate();
+      timer = d3.timer((elapsed) => {
+        projection.rotate([rotation[0] - elapsed * .006, rotation[1], rotation[2]]);
+        countries.attr("d", (feature) => path(feature));
+      });
+    };
+    updateMotion();
+    reducedMotion.addEventListener("change", updateMotion);
+    onCleanup(() => {
+      timer?.stop();
+      reducedMotion.removeEventListener("change", updateMotion);
+      svg.remove();
+    });
   });
-
-  return (
-    <div class="flex flex-col text-white justify-center items-center w-full h-full">
-      <div class="w-full" ref={mapContainer}></div>
-    </div>
-  );
+  return <div style={{ width: "100%", height: "100%" }} ref={mapContainer} />;
 };
 
 export default GlobeComponent;

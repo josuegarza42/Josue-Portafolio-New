@@ -6,28 +6,30 @@ type Props = {
   title: string;
   description: string;
   pubDate: Date;
+  period?: string;
   minutesRead: string;
   url: string;
 };
 
-const { title, description, pubDate, minutesRead, url } = Astro.props;
+const { title, description, pubDate, period, minutesRead, url } = Astro.props;
 ---
 
-<BasicLayout description={description} page="blog" slug={url} title={title}>
-  <main class="mx-auto max-w-3xl w-full h-screen p-8 text-neutral-100">
-    <a
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg mb-8"       href="/blog"
-      >Back</a
-    >
-    <div class="my-10">
-      <h1 class="text-5xl font-semibold">{title}</h1>
-      <div class="flex justify-between pt-4 text-gray-500 text-sm">
-        <p>{formatDate(pubDate)}</p>
-        <p>{minutesRead}</p>
-      </div>
-    </div>
-    <article class="prose prose-p:text-red-500 prose-slate prose-invert">
-      <slot />
-    </article>
+<BasicLayout description={description} page="blog" slug={url} pubDate={pubDate.toISOString()} title={`${title} | Josue Garza`}>
+  <main class="detail-page">
+    <a class="back" href="/blog">← Experience & beyond</a>
+    <header>
+      <h1>{title}</h1>
+      <div class="detail-meta"><p>{period || formatDate(pubDate)}</p><p>{minutesRead}</p></div>
+    </header>
+    <article><slot /></article>
   </main>
 </BasicLayout>
+
+<style>
+  .detail-page { width: 100%; max-width: 48rem; padding: 2rem 1.25rem 4rem; color: #e5e5e5; }
+  .back { color: var(--color-primary-500); display: inline-block; text-underline-offset: .25rem; }
+  header { margin: 2.5rem 0; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.025em; margin: 0; }
+  .detail-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; margin-top: 1rem; color: #bfbfbf; font-size: .85rem; }
+  .detail-meta p { margin: 0; }
+</style>

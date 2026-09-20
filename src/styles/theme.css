@@ -1,0 +1,12 @@
+/* Brand palette sampled from public/J.png. All accent colors derive from these tokens. */
+:root {
+  --color-primary-100: #f5eeff;
+  --color-primary-200: #edddff;
+  --color-primary-300: #e4ceff;
+  --color-primary-400: #dec4ff;
+  --color-primary-500: #d8bffe;
+  --color-primary-600: #bc94f3;
+  --color-primary-700: #9a68de;
+  --color-primary-800: #7448b3;
+  --color-primary-900: #4c2a7a;
+}

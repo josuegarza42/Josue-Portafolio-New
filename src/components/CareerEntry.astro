@@ -1,0 +1,56 @@
+---
+import type { CareerEntry } from "../data/career";
+interface Props { entry: CareerEntry; kind: "experience" | "project" }
+const { entry, kind } = Astro.props;
+---
+
+<details class:list={["profile-entry", { featured: entry.featured }]} id={`${kind}-${entry.id}`}>
+  <summary>
+    <span class="entry-heading">
+      <span class="entry-meta"><span>{entry.organization}</span><span>{entry.period}</span></span>
+      <span class="entry-title">{entry.title}</span>
+      <span class="entry-description">{entry.summary}</span>
+      <span class="expand-label"><span class="closed-label">Explore details</span><span class="open-label">Close details</span></span>
+    </span>
+    <span class="toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="entry-body">
+    {entry.location && <p class="location">{entry.location}</p>}
+    {entry.details && <ul class="contributions">{entry.details.map((detail) => <li>{detail}</li>)}</ul>}
+    {entry.tags && <ul class="tags" aria-label="Focus areas">{entry.tags.map((tag) => <li>{tag}</li>)}</ul>}
+    {entry.links && <div class="entry-links">{entry.links.map((link) => (
+      <a href={link.href} target={link.href.startsWith("https://") ? "_blank" : undefined} rel={link.href.startsWith("https://") ? "noopener noreferrer" : undefined}>
+        {link.label}<span aria-hidden="true"> {link.href.startsWith("https://") ? "↗" : "→"}</span>
+      </a>
+    ))}</div>}
+  </div>
+</details>
+
+<style>
+  .profile-entry { border: 1px solid #353239; border-radius: 1rem; background: #19181b; scroll-margin-top: 6rem; overflow-wrap: anywhere; }
+  .profile-entry.featured { background: linear-gradient(120deg, #201c26, #19181b 65%); }
+  .profile-entry[open], .profile-entry:target { border-color: var(--color-primary-700); }
+  summary { display: flex; gap: 1rem; align-items: flex-start; list-style: none; padding: 1.35rem 1.5rem; cursor: pointer; border-radius: inherit; }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover .entry-title { color: var(--color-primary-400); }
+  .entry-heading { display: block; flex: 1; min-width: 0; }
+  .entry-meta { display: flex; flex-wrap: wrap; gap: .3rem 1rem; justify-content: space-between; color: var(--color-primary-500); font-size: .75rem; line-height: 1.6; }
+  .entry-meta span:last-child { color: #b3aebc; }
+  .entry-title { display: block; color: #f5f3f8; font-family: "CabinetGrotesk", sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin: .5rem 0; }
+  .entry-description { display: block; color: #bfbac6; line-height: 1.65; font-size: .875rem; }
+  .expand-label { display: block; margin-top: .9rem; color: var(--color-primary-500); font-size: .75rem; }
+  .open-label { display: none; }
+  [open] .open-label { display: inline; }
+  [open] .closed-label { display: none; }
+  .toggle { display: grid; place-items: center; flex-shrink: 0; width: 1.65rem; height: 1.65rem; border: 1px solid #4b405b; border-radius: 50%; color: var(--color-primary-500); line-height: 1; }
+  [open] .toggle { transform: rotate(45deg); }
+  .entry-body { margin: 0 1.5rem; padding: 1.2rem 0 1.5rem; border-top: 1px solid #38313f; color: #c9c4d0; font-size: .875rem; line-height: 1.75; }
+  .location { margin: 0 0 .8rem; color: #b3aebc; font-size: .8rem; }
+  .contributions { margin: 0; padding-left: 1.2rem; list-style: disc; }
+  .contributions li + li { margin-top: .6rem; }
+  .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 0; }
+  .tags li { padding: .15rem .65rem; border: 1px solid #40364e; border-radius: 2rem; font-size: .7rem; color: var(--color-primary-400); }
+  .entry-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: .75rem; }
+  .entry-links a { padding: .5rem 0; color: var(--color-primary-500); text-underline-offset: .25rem; }
+  @media (max-width: 480px) { summary { padding: 1.15rem; gap: .65rem; } .entry-body { margin: 0 1.15rem; } }
+</style>

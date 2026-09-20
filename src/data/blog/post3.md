@@ -1,42 +1,20 @@
 ---
-layout: ../../layouts/LayoutBlogPost.astro
-title: "Web Developer at Devsthink"
-description: "Overview of roles and accomplishments at Devsthink, including developer and co-founder responsibilities. Focus on web development, graphic design, UI/UX, mobile development, and database management, showcasing a diverse skill set."
+title: "Co-Founder at Devsthink"
+description: "Co-founding a project development company spanning web, UI/UX, mobile development, and databases."
 pubDate: 2023-04-16
-category: "intro"
+period: "Feb 2022 — Apr 2023"
 ---
 
-# **Developer at Devsthink**
-- Freelance
-- Feb 2022 - Apr 2023 · 1 yr 3 mos
-- Remote, San Luis Potosí, México
+## Role
 
-## **Skills:**
-- Project Management
-- Front-End Development
-- HTML
-- Cascading Style Sheets (CSS)
-- Bootstrap
-- JavaScript
-- Tailwind CSS
-- jQuery
+**Co-Founder · Devsthink · Freelance · San Luis Potosí, Mexico · Remote**
 
-## **Role Summary:**
-As a Developer at Devsthink, I engaged in various projects, mainly focusing on web development. I utilized a range of technologies including HTML, CSS, Bootstrap, JavaScript, Tailwind CSS, and jQuery. My role emphasized the importance of project management and front-end development skills in delivering successful solutions remotely.
+Co-founded a project development company focused on websites, with work extending to graphic design, UI/UX, mobile development, and database management.
 
----
+## Contributions
 
-# **Co-Founder at Devsthink**
-- Full-time
-- Feb 2022 - Apr 2023 · 1 yr 3 mos
-- Hybrid
+- Combined project coordination with frontend development and design.
+- Developed projects including Pocket U, Healthy Hive, and Edufree.
+- Connected product development with hackathon challenges and practical user needs.
 
-## **Skills:**
-- Project Management
-- Web Design
-- Start-ups
-- Team Leadership
-- Contract Negotiation
-
-## **Role Summary:**
-As a Co-Founder of Devsthink, my journey involved developing the company into a versatile project development firm. We started with a focus on website development and expanded into areas like graphic design, UI/UX, mobile development, and database management. My role encompassed project management, web design, start-up growth, team leadership, and contract negotiation, contributing to our identity as 'Developers of Dreams'.
+[Explore the projects](/blog#project-pocket-u)

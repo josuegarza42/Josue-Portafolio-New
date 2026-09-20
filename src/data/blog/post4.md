@@ -3,6 +3,7 @@ layout: ../../layouts/LayoutBlogPost.astro
 title: "Frontend Developer at redOM8"
 description: "Experience as a Frontend Developer at redOM8, involving the design and development of a mobile application using Dart/Flutter. This role highlights skills in Figma, Odoo, workflow diagrams, and frontend development."
 pubDate: 2023-03-29
+period: "Dec 2022 — Mar 2023"
 category: "intro"
 ---
 

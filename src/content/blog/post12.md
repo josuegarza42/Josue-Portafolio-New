@@ -1,37 +1,22 @@
 ---
-layout: ../../layouts/LayoutBlogPost.astro
-title: "Elaina"
-description: "Participation in the prestigious Mitacs Globalink Research Internship, contributing to the development of Elaina, an AI-enhanced e-learning platform. This project showcases skills in project management, agile methodologies, and user interface design."
-pubDate: 2023-09-02
-category: "intro"
+title: "Elaina — AI E-Learning Platform"
+description: "Research at Simon Fraser University through Mitacs Globalink, building an AI-enhanced educational platform."
+pubDate: 2023-06-01
+period: "Jun 2023 — Aug 2023"
 ---
 
-[**Link to the project**](https://www.elaina.study/)
+## Research project
 
-# **Project Overview:**
+**Research Intern · [Simon Fraser University](https://www.sfu.ca/) · Burnaby, Canada**
 
-- Jun 2023 - Sep 2023 · 4 mos
-- Simon Fraser University, Burnaby, British Columbia, Canada
-- Full-time, On-site
+Contributed to Elaina through the Mitacs Globalink research program, focusing on an AI-enhanced educational platform.
 
-# **Project Summary:**
-During my tenure as a Research Intern at Simon Fraser University under the Mitacs Globalink Research Internship 2023, I participated in a 12-week research program collaborating with renowned faculty. The program selects high-achieving senior undergraduates globally, offering them the opportunity to contribute to advanced research projects.
+## Contributions
 
-I worked on "Elaina", an AI-enhanced e-learning platform that transforms traditional education into personalized digital experiences. By harnessing AI-chatbot technology, Elaina provides accessible and engaging education to a diverse range of learners.
+- Led project scoping and development of the platform.
+- Developed the interface with **React.js and Tailwind CSS**.
+- Managed the team with **Scrum and Jira**.
 
-# **Roles and Responsibilities:**
-- Led an international team through the strategic development and successful launch of Elaina, employing the Scrum framework and utilizing Jira for project tracking and management.
-- Developed an adaptable and user-friendly interface using React.js and Tailwind CSS, aligning with the proposed design.
-- Spearheaded the design and implementation of intuitive and aesthetically pleasing user interfaces for children, refining them based on user feedback.
+## Core skills
 
-# **Project Details:**
-- Web/mobile app development for online inference of stream data (Elaina Chatbot)
-
-# **Skills Developed:**
-- Project Management
-- Agile Methodologies
-- Front-End Development
-- Teamwork
-- Analytical Skills
-- User Experience (UX)
-- User Interface Design
+Project scoping · AI-enhanced learning · React · Tailwind CSS · Scrum · Jira

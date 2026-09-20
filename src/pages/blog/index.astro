@@ -1,45 +1,267 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import PostRow from "../../components/Blog/PostRow.astro";
+import BasicLayout from "../../layouts/BasicLayout.astro";
+import CareerEntry from "../../components/CareerEntry.astro";
+import { PROFILE, SKILL_GROUPS } from "../../data/profile";
+import { AWARDS, COMMUNITY, CREDENTIALS, CREDENTIAL_GROUPS, EDUCATION, LANGUAGES, PORTFOLIO_PROJECTS, VOLUNTEERING, WORK_HISTORY } from "../../data/career";
+import { LINKS } from "../../lib/constants";
 
-const posts = (await getCollection("blog"))?.sort(
-  (blogEntryA, blogEntryB) =>
-    (blogEntryB.data.pubDate || new Date()).getTime() -
-    (blogEntryA.data.pubDate || new Date()).getTime()
-);
+const featuredWork = WORK_HISTORY.filter((entry) => entry.featured);
+const otherWork = WORK_HISTORY.filter((entry) => !entry.featured);
+const featuredProjects = PORTFOLIO_PROJECTS.filter((entry) => entry.featured);
+const otherProjects = PORTFOLIO_PROJECTS.filter((entry) => !entry.featured);
+const sections = [
+  { id: "experience", label: "Experience", detail: `${WORK_HISTORY.length} roles` },
+  { id: "projects", label: "Projects", detail: `${PORTFOLIO_PROJECTS.length} projects` },
+  { id: "recognition", label: "Recognition", detail: `${AWARDS.length} honors & awards` },
+  { id: "certifications", label: "Certifications", detail: `${CREDENTIALS.length} credentials` },
+  { id: "community", label: "Community", detail: "Founding & volunteering" },
+  { id: "education", label: "Education & skills", detail: "Learning & languages" },
+];
 ---
 
+<BasicLayout description="Explore Josue Garza's professional experience, projects, awards, certifications, community work, and education." title="Experience & beyond | Josue Garza">
+  <main class="career-page" id="top">
+    <a class="back" href="/">← Back to portfolio</a>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">The professional journey</p>
+        <h1>Experience <span>& beyond.</span></h1>
+        <p class="intro">From technical support to AI-powered customer experiences. The work, projects, and communities that shaped how I build solutions.</p>
+      </div>
+      <div class="header-links">
+        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View résumé <span aria-hidden="true">↗</span></a>
+        <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <div class="career-layout">
+      <nav class="section-nav" aria-label="Professional profile sections">
+        {sections.map((section, index) => (
+          <a href={`#${section.id}`} data-section={section.id}>
+            <span class="nav-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <span><span class="nav-label">{section.label}</span><span class="nav-detail">{section.detail}</span></span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="sections">
+        <section id="experience" aria-labelledby="experience-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">01 / Career</p><h2 id="experience-heading">Professional experience</h2></div><span class="count">{WORK_HISTORY.length} roles</span></div>
+          <p class="section-intro">A foundation in support and engineering, grown through research, entrepreneurship, and enterprise consulting.</p>
+          <div class="entry-list">{featuredWork.map((entry) => <CareerEntry entry={entry} kind="experience" />)}</div>
+          <details class="collection" id="earlier-experience">
+            <summary><span>More experience<span class="collection-subtitle">Research, founding roles, and earlier positions</span></span><span class="collection-count">{otherWork.length} roles <span aria-hidden="true">＋</span></span></summary>
+            <div class="entry-list collection-body">{otherWork.map((entry) => <CareerEntry entry={entry} kind="experience" />)}</div>
+          </details>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">02 / Making things happen</p><h2 id="projects-heading">Projects</h2></div><span class="count">{PORTFOLIO_PROJECTS.length} projects</span></div>
+          <p class="section-intro">Selected work across customer needs, learning, and social impact. Open a project to explore my contribution and its supporting links.</p>
+          <div class="entry-list">{featuredProjects.map((entry) => <CareerEntry entry={entry} kind="project" />)}</div>
+          <details class="collection" id="more-projects">
+            <summary><span>More projects<span class="collection-subtitle">Hackathons, products, and early explorations</span></span><span class="collection-count">{otherProjects.length} projects <span aria-hidden="true">＋</span></span></summary>
+            <div class="entry-list collection-body">{otherProjects.map((entry) => <CareerEntry entry={entry} kind="project" />)}</div>
+          </details>
+        </section>
+
+        <section id="recognition" aria-labelledby="recognition-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">03 / Milestones</p><h2 id="recognition-heading">Honors & awards</h2></div><span class="count">{AWARDS.length} recognitions</span></div>
+          <p class="section-intro">Team achievements in technology challenges, with the work behind each recognition one click away.</p>
+          <div class="awards-grid">
+            {AWARDS.map((award) => (
+              <article class="award" id={`award-${award.id}`}>
+                <p class="award-distinction">{award.distinction}</p>
+                <h3>{award.title}</h3>
+                <p class="small-meta">{award.organization} · {award.period}</p>
+                <p>{award.description}</p>
+                <a href={award.link.href} target={award.link.href.startsWith("https://") ? "_blank" : undefined} rel={award.link.href.startsWith("https://") ? "noopener noreferrer" : undefined}>{award.link.label} <span aria-hidden="true">→</span></a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="certifications" aria-labelledby="certifications-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">04 / Continuing to learn</p><h2 id="certifications-heading">Licenses & certifications</h2></div><span class="count">{CREDENTIALS.length} credentials</span></div>
+          <p class="section-intro">Training and credentials grouped by focus. Each entry includes its issuer, issue date, and credential link.</p>
+          <div class="credential-groups">
+            {CREDENTIAL_GROUPS.map((group) => {
+              const credentials = CREDENTIALS.filter((credential) => credential.group === group.id);
+              return (
+                <details class="collection credential-group" id={`credentials-${group.id}`}>
+                  <summary><span>{group.title}<span class="collection-subtitle">{group.description}</span></span><span class="collection-count">{credentials.length} <span aria-hidden="true">＋</span></span></summary>
+                  <ul class="credential-list">
+                    {credentials.map((credential) => (
+                      <li><div><h3>{credential.title}</h3><p>{credential.issuer} · Issued {credential.issued}</p></div><a href={credential.href} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${credential.title}`}>Credential <span aria-hidden="true">↗</span></a></li>
+                    ))}
+                  </ul>
+                </details>
+              );
+            })}
+          </div>
+        </section>
+
+        <section id="community" aria-labelledby="community-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">05 / Building together</p><h2 id="community-heading">Community & organizations</h2></div></div>
+          {COMMUNITY.map((community) => (
+            <article class="community-card" id={community.id}>
+              <div class="community-monogram" aria-hidden="true">S.</div>
+              <div><p class="small-meta">{community.role} · {community.period}</p><h3>{community.title}</h3><p>{community.summary}</p><p>{community.detail}</p><a href={community.href} target="_blank" rel="noopener noreferrer">Meet the community ↗</a></div>
+            </article>
+          ))}
+          <p class="community-note">My founding work also includes <a href="#experience-devsthink">Devsthink →</a></p>
+          <div class="volunteering"><h3>Volunteering</h3>{VOLUNTEERING.map((entry) => <div><p class="volunteer-role">{entry.title}</p><p class="small-meta">{entry.organization} · {entry.cause}</p></div>)}</div>
+        </section>
+
+        <section id="education" aria-labelledby="education-heading" data-profile-section>
+          <div class="section-heading"><div><p class="eyebrow">06 / Foundations</p><h2 id="education-heading">Education & skills</h2></div></div>
+          <article class="education-card"><p class="small-meta">{EDUCATION.period}</p><h3>{EDUCATION.degree}</h3><p class="university">{EDUCATION.institution}</p><p>{EDUCATION.summary}</p></article>
+          <div id="skills" class="skills"><h3>Areas of practice</h3><div class="skills-grid">{SKILL_GROUPS.map((group) => <details class="skill-group"><summary>{group.title}</summary><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></details>)}</div></div>
+          <div class="languages"><h3>Languages</h3><dl>{LANGUAGES.map((language) => <div><dt>{language.name}</dt><dd>{language.level}</dd></div>)}</dl></div>
+        </section>
+
+        <footer class="page-footer"><p>Let's build a better customer experience.</p><a href={`mailto:${PROFILE.email}`}>Get in touch ↗</a><a class="back-to-top" href="#top">Back to top ↑</a></footer>
+      </div>
+    </div>
+  </main>
+</BasicLayout>
+
 <script>
-  import { animate, type AnimationSequence } from "motion";
-  import { loaderAnimation } from "../../lib/constants";
-
-  const sequence = [loaderAnimation];
-
-  animate(sequence as AnimationSequence);
+  // Native details work without JavaScript. Hash navigation additionally opens
+  // nested entries so links from awards, community, and other pages stay useful.
+  function revealHash() {
+    if (!location.hash) return;
+    let id: string;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    let node: HTMLElement | null = target;
+    while (node) {
+      if (node instanceof HTMLDetailsElement) node.open = true;
+      node = node.parentElement;
+    }
+    requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+  }
+  revealHash();
+  window.addEventListener("hashchange", revealHash);
+  // Also handle a second click on the same hash after an entry has been closed.
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => { if (link.hash === location.hash) revealHash(); });
+  });
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>("[data-section]");
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries.find((item) => item.isIntersecting);
+    if (!entry) return;
+    navLinks.forEach((link) => {
+      if (link.dataset.section === entry.target.id) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
+  document.querySelectorAll("[data-profile-section]").forEach((section) => observer.observe(section));
 </script>
 
-<Layout
-  description="Senior Enterprise Support Specialist passionate about optimizing complex technical environments and ensuring exceptional service delivery for enterprise clients."   title="Josue Garza - Blog"
->
-  <main
-    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8"
-  >
-    <a
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"       href="/"
-      >Back</a
-    >
-    <h1 class="text-4xl font-bold mb-4 text-neutral-100">Work Experience</h1>
-    <ul class="w-full">
-      {
-        posts?.map((post) => (
-//aqui puede estar la solucion
-
-          <PostRow
-            date={post.data.pubDate || new Date()}             id={post.id}             title={post.data.title || "No title"}
-          />
-        ))
-      }
-    </ul>
-  </main>
-</Layout>
+<style>
+  .career-page { width: 100%; max-width: 72rem; padding: 2.5rem 2rem 3rem; color: #f5f3f8; }
+  a { color: var(--color-primary-500); text-underline-offset: .25rem; }
+  .back { display: inline-flex; padding: .5rem 0; color: #c5c0cb; font-size: .85rem; }
+  .page-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin: 3rem 0 3.5rem; }
+  .eyebrow { color: var(--color-primary-500); font-size: .68rem; line-height: 1.5; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .7rem; }
+  h1 { font-size: clamp(2.7rem, 6vw, 4.4rem); font-weight: 700; line-height: 1.02; letter-spacing: -.04em; margin: 0; }
+  h1 span { color: var(--color-primary-500); }
+  .intro { max-width: 38rem; font-size: 1rem; color: #bfbac6; line-height: 1.75; margin: 1.2rem 0 0; }
+  .header-links { display: flex; flex-direction: column; gap: 1rem; align-items: center; flex-shrink: 0; font-size: .8rem; }
+  .resume-link { display: flex; justify-content: space-between; gap: 2rem; padding: .85rem 1.25rem; border-radius: .6rem; background: var(--color-primary-500); color: #21152f; font-weight: 700; text-decoration: none; }
+  .resume-link:hover { background: var(--color-primary-400); }
+  .career-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 3.5rem; align-items: start; }
+  .section-nav { position: sticky; top: 2rem; display: flex; flex-direction: column; gap: .35rem; padding: .5rem 0; }
+  .section-nav a { display: flex; align-items: baseline; gap: .75rem; padding: .8rem .75rem; border: 1px solid transparent; border-radius: .6rem; color: #c5c0cb; text-decoration: none; }
+  .section-nav a:hover, .section-nav a[aria-current] { background: #251e2f; border-color: #44364f; color: var(--color-primary-400); }
+  .nav-number { font-size: .6rem; color: var(--color-primary-600); }
+  .nav-label { display: block; font-size: .85rem; font-weight: 700; }
+  .nav-detail { display: block; margin-top: .2rem; font-size: .67rem; color: #aaa4b2; }
+  .sections { min-width: 0; }
+  section { padding-top: .5rem; scroll-margin-top: 2rem; }
+  section + section { margin-top: 4rem; padding-top: 3.5rem; border-top: 1px solid #332e39; }
+  .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; }
+  .section-heading .eyebrow { margin-bottom: .5rem; }
+  h2 { font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.15; margin: 0; }
+  h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.4; margin: .35rem 0; }
+  .count { flex-shrink: 0; color: #b8aec6; border: 1px solid #44394f; border-radius: 2rem; padding: .3rem .65rem; font-size: .68rem; white-space: nowrap; }
+  p { color: #bfbac6; line-height: 1.7; font-size: .875rem; }
+  .section-intro { margin: 1rem 0 1.5rem; }
+  .entry-list { display: grid; gap: .8rem; }
+  .collection { border: 1px solid #38313f; border-radius: .8rem; background: #161419; margin-top: 1rem; }
+  .collection > summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem; list-style: none; cursor: pointer; font-size: .9rem; color: #e4dfea; border-radius: inherit; }
+  .collection > summary::-webkit-details-marker { display: none; }
+  .collection > summary:hover { color: var(--color-primary-400); }
+  .collection[open] > summary { border-bottom: 1px solid #38313f; border-radius: .8rem .8rem 0 0; }
+  .collection-subtitle { display: block; font-size: .75rem; line-height: 1.6; color: #aaa4b2; margin-top: .3rem; }
+  .collection-count { color: var(--color-primary-500); font-size: .7rem; white-space: nowrap; }
+  .collection-count > span { display: inline-block; margin-left: .3rem; font-size: 1rem; }
+  .collection[open] > summary .collection-count > span { transform: rotate(45deg); }
+  .collection-body { padding: 1rem; }
+  .awards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .award { display: flex; flex-direction: column; padding: 1.25rem; border: 1px solid #38313f; border-radius: .8rem; background: #19171d; }
+  .award-distinction { color: var(--color-primary-500); font-size: .7rem; font-weight: 700; margin: 0 0 .5rem; }
+  .award h3 { font-size: 1.1rem; }
+  .small-meta { font-size: .75rem; color: #aaa4b2; margin: .5rem 0; }
+  .award p:not(.small-meta):not(.award-distinction) { margin: .6rem 0 1rem; font-size: .8rem; }
+  .award a { margin-top: auto; padding: .4rem 0; font-size: .8rem; }
+  .credential-group { margin-top: .7rem; }
+  .credential-list { list-style: none; padding: 0 1.25rem; margin: 0; }
+  .credential-list li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 0; }
+  .credential-list li + li { border-top: 1px solid #332d3b; }
+  .credential-list h3 { font-family: "Satoshi", sans-serif; font-size: .82rem; margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+  .credential-list p { margin: .3rem 0 0; color: #aaa4b2; font-size: .7rem; }
+  .credential-list a { flex-shrink: 0; padding: .5rem 0; font-size: .72rem; }
+  .community-card { display: flex; align-items: flex-start; gap: 1.5rem; border: 1px solid #44364f; border-radius: 1rem; padding: 1.75rem; margin-top: 1.5rem; background: linear-gradient(120deg, #261d33, #19171d); }
+  .community-monogram { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: .75rem; background: #3d2b52; font-size: 1.8rem; font-weight: 800; font-family: "CabinetGrotesk", sans-serif; color: var(--color-primary-400); flex-shrink: 0; }
+  .community-card h3 { font-size: 1.75rem; }
+  .community-card a { display: inline-block; padding: .4rem 0; font-size: .85rem; }
+  .community-card .small-meta { margin-top: 0; }
+  .community-note { margin: 1rem 0 1.5rem; font-size: .8rem; }
+  .volunteering { border-left: 2px solid var(--color-primary-800); padding-left: 1.3rem; }
+  .volunteering h3 { font-size: .9rem; }
+  .volunteer-role { color: #e4dfea; margin-bottom: .2rem; }
+  .education-card { margin-top: 1.5rem; padding: 1.5rem; border: 1px solid #38313f; border-radius: .8rem; background: #19171d; }
+  .education-card h3 { margin: .8rem 0 .3rem; font-size: 1.35rem; }
+  .education-card .university { color: var(--color-primary-500); margin-top: .3rem; }
+  .education-card p:last-child { margin-bottom: 0; }
+  .skills { margin-top: 2rem; scroll-margin-top: 6rem; }
+  .skills > h3, .languages > h3 { font-size: .9rem; margin-bottom: .8rem; }
+  .skills-grid { display: grid; gap: .6rem; }
+  .skill-group { border: 1px solid #38313f; border-radius: .6rem; padding: .9rem 1rem; }
+  .skill-group summary { cursor: pointer; color: #d4cadf; font-size: .85rem; }
+  .skill-group ul { list-style: disc; padding-left: 1.2rem; font-size: .8rem; color: #bfbac6; line-height: 1.9; }
+  .languages { margin-top: 1.5rem; }
+  .languages dl { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin: 0; }
+  .languages dt { font-size: .875rem; }
+  .languages dd { margin: .3rem 0 0; font-size: .75rem; color: #aaa4b2; }
+  .page-footer { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem; border-top: 1px solid #38313f; margin-top: 3rem; padding-top: 1.5rem; }
+  .page-footer p { width: 100%; margin: 0; color: #e4dfea; }
+  .page-footer a { font-size: .8rem; padding: .5rem 0; }
+  .back-to-top { margin-left: auto; color: #bfbac6; }
+  @media (max-width: 900px) {
+    .career-page { padding: 1.5rem 1.25rem 3rem; }
+    .career-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .section-nav { flex-direction: row; overflow-x: auto; top: 0; z-index: 5; background: #131215; border-block: 1px solid #332e39; padding: .5rem 0; scrollbar-width: thin; scrollbar-color: #604478 transparent; }
+    .section-nav a { flex-shrink: 0; padding: .65rem .85rem; }
+    .nav-number, .nav-detail { display: none; }
+    section, :global(.profile-entry) { scroll-margin-top: 5.5rem; }
+    .page-header { margin: 2rem 0; align-items: flex-start; }
+    .intro { font-size: .9rem; }
+  }
+  @media (max-width: 600px) {
+    .page-header { flex-direction: column; gap: 1.5rem; }
+    .header-links { flex-direction: row; flex-wrap: wrap; gap: 1.2rem; }
+    .resume-link { gap: 1rem; }
+    .section-heading { align-items: flex-start; flex-direction: column; gap: .75rem; }
+    .count { font-size: .65rem; }
+    .awards-grid { grid-template-columns: 1fr; }
+    section + section { margin-top: 2.5rem; padding-top: 2.5rem; }
+    .collection > summary { padding: 1rem; }
+    .collection-body { padding: .65rem; }
+    .credential-list li { align-items: flex-start; flex-direction: column; gap: .3rem; }
+    .community-card { gap: 1rem; padding: 1.25rem; flex-direction: column; }
+  }
+</style>

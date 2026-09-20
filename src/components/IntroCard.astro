@@ -1,57 +1,42 @@
 ---
 import Card from "./Card/index.astro";
-import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
+import { PROFILE } from "../data/profile";
 import { Icon } from "astro-icon/components";
-import Tooltip from "./Tooltip/index";
 import { Image } from "astro:assets";
 ---
 
-<Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
-  <div class="flex w-full h-full">
-    <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
-      <div class="flex flex-col h-full">
-        <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
-        <p class="m-0 font-light text-xl">
-          Hello, I'm <b class="font-bold">Josue Garza</b>, a <b
-            class="font-bold">Customer Experience (CX) professional</b
-          > specializing in <b class="font-bold">AI-driven automation</b> and <b
-            class="font-bold">solution design</b
-          >. I leverage my <b class="font-bold"
-            >Systems Engineering background</b
-          > to translate complex client requirements into <b class="font-bold"
-            >efficient, automated solutions</b
-          > that enhance service delivery for enterprise clients.
-        </p>
-      </div>
-      <div class="flex gap-4">
-        <a aria-label="github profile" href={LINKS.github} target="_blank">
-          <Button aria-label="github profile">
-            <Icon class="h-6" name="ri:github-fill" />
-            <span class="sr-only">GitHub Profile</span>
-          </Button>
-        </a>
-        <a aria-label="linkedin profile" href={LINKS.linkedin} target="_blank">
-          <Button aria-label="linkedin profile">
-            <Icon class="h-6" name="ri:linkedin-box-fill" />
-            <span class="sr-only">Linkedin Profile</span>
-          </Button>
-        </a>
-
-        <Tooltip client:visible>
-          <Button aria-label="easter egg btn">
-            <Icon class="h-6" name="ri:emotion-laugh-line" />
-            <span class="sr-only">Easter egg button</span>
-          </Button>
-        </Tooltip>
-      </div>
+<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="lg:row-span-4">
+  <div class="intro">
+    <div class="intro-copy">
+      <p class="eyebrow">Customer experience · AI & automation</p>
+      <h1>{PROFILE.name}</h1>
+      <p class="intro-role">{PROFILE.role} at {PROFILE.company}</p>
+      <p class="intro-summary">I turn complex customer requirements into practical AI and automation solutions — from solution design and client onboarding to project delivery.</p>
+      <nav class="intro-links" aria-label="Professional profiles">
+        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View résumé <Icon name="ri:arrow-right-up-line" /></a>
+        <a class="profile-link" aria-label="GitHub profile" href={LINKS.github} target="_blank" rel="noopener noreferrer"><Icon name="ri:github-fill" /></a>
+        <a class="profile-link" aria-label="LinkedIn profile" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="ri:linkedin-box-fill" /></a>
+      </nav>
     </div>
-    <Image
-      alt="memoji of josue"
-      class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
-      height="300"
-      src="/J.png"
-      width="300"
-    />
+    <Image alt="Josue Garza monogram" class="intro-image" height="220" src="/J.png" width="220" />
   </div>
 </Card>
+
+<style>
+  .intro { display: flex; align-items: center; gap: 1.5rem; height: 100%; }
+  .intro-copy { flex: 1; min-width: 0; }
+  .eyebrow { color: var(--color-primary-500); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 .75rem; }
+  h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.05; letter-spacing: -.035em; margin: 0 0 .75rem; }
+  .intro-role { color: #f5f5f5; font-size: 1.05rem; margin: 0 0 .75rem; }
+  .intro-summary { color: #bfbfbf; font-size: 1rem; line-height: 1.65; max-width: 36rem; margin: 0; }
+  .intro-links { display: flex; gap: .75rem; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; }
+  .intro-links a { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; border: 1px solid #505050; border-radius: .5rem; text-decoration: none; }
+  .intro-links a:hover { border-color: var(--color-primary-600); }
+  .intro-links :global(svg) { width: 1.25rem; height: 1.25rem; }
+  .resume-link { padding: .65rem 1rem; background: var(--color-primary-500); color: #171717; font-weight: 700; }
+  .profile-link { width: 44px; color: #f5f5f5; }
+  .intro-image { width: 26%; max-width: 220px; height: auto; flex-shrink: 0; }
+  @media (max-width: 600px) { .intro { align-items: flex-start; } .intro-image { width: 64px; } }
+  @media (max-width: 380px) { .intro-image { display: none; } }
+</style>

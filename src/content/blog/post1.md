@@ -13,7 +13,7 @@ category: "intro"
 
 # **Project Overview:**
 
-- Nov 2022 - Present
+- Nov 2022 - Aug 2023
 - Associated with Softdone
 
 # **Project Summary:**

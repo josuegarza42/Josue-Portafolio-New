@@ -1,37 +1,31 @@
 ---
-import { getCurrentTimeInItaly, formatTimeForItaly } from "../lib/helpers";
 import Card from "./Card/index.astro";
+const now = new Date();
+const formatTime = (date: Date) => new Intl.DateTimeFormat("en-US", {
+  hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true, timeZone: "America/Mexico_City",
+}).format(date);
 ---
 
 <script>
-  import { onCleanup, onMount } from "solid-js";
-  import { formatTimeForItaly } from "../lib/helpers";
-
-  let interval: ReturnType<typeof setInterval>;
-
-  function updateClock() {
-    const timeDisplay = document.getElementById("timeDisplay");
+  const clock = document.getElementById("timeDisplay");
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true, timeZone: "America/Mexico_City",
+  });
+  const updateClock = () => {
     const now = new Date();
-
-    if (timeDisplay) {
-      timeDisplay.textContent = formatTimeForItaly(now);
-      timeDisplay.setAttribute("datetime", now.toISOString());
-    }
-  }
-
-  onMount(() => {
-    interval = setInterval(updateClock, 1000);
-  });
-
-  onCleanup(() => {
-    clearInterval(interval);
-  });
+    if (clock) { clock.textContent = formatter.format(now); clock.setAttribute("datetime", now.toISOString()); }
+  };
+  updateClock();
+  const interval = setInterval(updateClock, 1000);
+  document.addEventListener("astro:before-swap", () => clearInterval(interval), { once: true });
 </script>
 
-<Card colSpan="lg:col-span-2" rowSpan="md:row-span-2" title="Time zone">
-  <time
-    class="text-2xl xl:text-5xl xl:whitespace-nowrap w-50 xl:w-100 h-[calc(100%-28px)] font-serif flex justify-center items-center"     datetime=""     id="timeDisplay"
-  >
-    {formatTimeForItaly(getCurrentTimeInItaly())}
-  </time>
+<Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="lg:row-span-2" title="Mexico City time">
+  <time datetime={now.toISOString()} id="timeDisplay">{formatTime(now)}</time>
+  <p>America/Mexico_City · UTC−6</p>
 </Card>
+
+<style>
+  time { display: block; font-size: clamp(1.5rem, 3vw, 2rem); font-variant-numeric: tabular-nums; margin-top: 1rem; }
+  p { color: #a3a3a3; font-size: .8rem; margin: .5rem 0 0; }
+</style>

@@ -1,34 +1,30 @@
 ---
-layout: ../../layouts/LayoutBlogPost.astro
-title: "Senior EPS at Qualtrics"
-description: "Leading enterprise support for complex technical environments at Qualtrics, focusing on advanced troubleshooting, client satisfaction, and process optimization."
-pubDate: 2024-05-13
-category: "experience"
+title: "Senior Specialist, Enterprise Support at Qualtrics"
+description: "Enterprise onboarding and solution delivery for 30+ clients, with AI-driven automation and measurable support improvements."
+pubDate: 2024-05-01
+period: "May 2024 — Jul 2025"
 ---
 
-# **Position Overview:**
-- Senior Specialist, Enterprise Support
-- May 2024 - Sep 2025
-- Qualtrics
-- Full-time, Remote - Ciudad de México, México
----
-## **Role Summary:**
-- As a Senior Specialist in Enterprise Support at Qualtrics, I am at the forefront of resolving intricate technical challenges for our enterprise-level clients. My role involves leveraging a strong Systems Engineering background to diagnose complex issues, provide expert guidance, and ensure the optimal performance and reliability of critical software environments. I am deeply committed to driving client success and upholding exceptional service standards.
----
-### **Key Responsibilities and Achievements:**
-- Drove significant improvements in key support metrics, reducing average Time to Resolution (TTR) by up to 90% and Time to First Response (TTFR) by over 90%, exceeding service level agreements and enhancing client satisfaction.
-- Played a pivotal role in strengthening enterprise client relationships and internal processes by participating in and shaping the first-ever "Success Check" for the Mexican team and the second in XM Discover's history, and contributing to the development of standardized templates.
-- Proactively identified and reported numerous critical system bugs, contributing to enhanced platform stability and optimized user experience. Served as a DRS for a major enterprise account, and successfully resolved complex technical issues for over 50 diverse companies throughout my tenure.
----
-### **Skills Developed:**
-- Enterprise Support
-- Technical Troubleshooting
-- Root Cause Analysis
-- Escalation Management
-- Client Relationship Management
-- System Monitoring
-- CRM/Ticketing Systems
-- Jira
-- Data Analysis
+## Role
 
----
+**[Qualtrics](https://www.qualtrics.com/) · Mexico City, Mexico**
+
+Managed the complete onboarding journey and project delivery for more than 30 enterprise clients, connecting customer requirements with technical solutions.
+
+## Contributions
+
+- Owned solution design for support automation projects, translating business requirements into AI-driven solutions that reduced time to resolution (TTR) by **up to 90%**.
+- Provided guidance and coaching on conversational design, decreasing time to first response (TTFR) by **over 90%**.
+- Served as the communication link between technical teams and clients to resolve complex issues and support project delivery.
+- Performed quality assurance testing on automation workflows to improve platform stability across client accounts.
+
+## Enterprise support at XM Discover
+
+- Diagnosed high-priority issues involving unstructured data ingestion, analysis, and visualization.
+- Coordinated escalations with Engineering, Product, Customer Success Managers, and Technical Account Managers.
+- Helped shape the Mexican team's first Success Check and contributed reusable client-engagement templates.
+- Documented solutions for internal and external knowledge bases and mentored colleagues on complex cases.
+
+## Core skills
+
+Client onboarding · Solution design · Support automation · Business analysis · Coaching · Quality assurance · Relationship management

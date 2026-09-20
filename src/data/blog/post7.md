@@ -3,6 +3,7 @@ layout: ../../layouts/LayoutBlogPost.astro
 title: "Frontend Developer at StartupLab MX"
 description: "Internship experience at StartupLab MX as a Frontend Developer, involving web and database system development, copywriting, and event management. Proficient in technologies such as PHP, HTML, CSS, JavaScript, Bootstrap, and MongoDB."
 pubDate: 2022-12-07
+period: "Sep 2022 — Dec 2022"
 category: "intro"
 ---
 

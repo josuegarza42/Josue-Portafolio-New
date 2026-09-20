@@ -1,42 +1,24 @@
 ---
 import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
+import { PROFILE } from "../data/profile";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
-  <div class="h-full">
-    <header class="flex items-center">
-      <h1 class="text-white text-xl font-bold">
-        Let's start working together!
-      </h1>
-    </header>
-
-    <address class="flex flex-col mt-4">
-      <h2 class="text-gray-500">Contact Details</h2>
-     <a
-          href="mailto:josuegarza.dev@gmail.com"
-          class="text-red-500 hover:text-red-700 transition-colors"
-        >
-          josuegarza.dev@gmail.com
-        </a>
-    </address>
-
-     <p class="text-gray-400 mt-2">
-        <h2 class="text-gray-500">Location</h2>
-        <span>Mexico City, Mexico</span>
-      </p>
-
-    <div class="flex flex-col mt-4 w-fit">
-
-      <ul>
-      <a
-       class="text-red-500 hover:text-red-700 transition-colors"
-            href={LINKS.resume}
-            target="_blank">Resume</a
-          >
-      </ul>
-    </div>
-  </div>
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-4" title="Let's connect">
+  <p class="contact-intro">Have a CX challenge or a project in mind?</p>
+  <address>
+    <span class="label">Email</span>
+    <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+    <span class="label">Based in</span>
+    <span>{PROFILE.location}</span>
+  </address>
+  <a class="resume" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View full résumé ↗</a>
 </Card>
 
-
+<style>
+  .contact-intro { color: #c3c3c3; line-height: 1.6; font-size: .95rem; margin: 1rem 0; }
+  address { display: flex; flex-direction: column; font-style: normal; font-size: .9rem; gap: .25rem; }
+  .label { color: #a3a3a3; font-size: .8rem; margin-top: .85rem; }
+  a { color: var(--color-primary-500); overflow-wrap: anywhere; text-underline-offset: .25rem; }
+  .resume { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
+</style>

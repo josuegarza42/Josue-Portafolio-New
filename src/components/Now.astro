@@ -1,26 +1,21 @@
 ---
 import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
+import { EXPERIENCE, PROFILE } from "../data/profile";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
-  <div class="flex justify-between w-full items-start mb-2">
-    <div class="flex flex-col">
-      <ul class="list-disc list-inside">
-        <span class="text-xs text-gray-500 cursor-pointer">
-          <a
-            href="https://www.qualtrics.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-red-500 hover:text-red-700 transition-colors">Zendesk</a
-          >
-        </span>
-        <li>Associate Services Consultant</li>
-      </ul>
-    </div>
-    <Pulse />
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-2" title="Currently">
+  <div class="current-role">
+    <a href={PROFILE.companyUrl} target="_blank" rel="noopener noreferrer">{PROFILE.company}</a>
+    <span aria-label="Current position"><Pulse /></span>
   </div>
-  <!--
-
-     -->
+  <p class="role">{PROFILE.role}</p>
+  <p class="period">{EXPERIENCE[0].period}</p>
 </Card>
+
+<style>
+  .current-role { display: flex; justify-content: space-between; align-items: center; margin-top: .75rem; }
+  a { color: var(--color-primary-500); text-underline-offset: .2rem; }
+  .role { margin: .5rem 0; font-size: .95rem; line-height: 1.5; }
+  .period { color: #a3a3a3; font-size: .8rem; margin: 0; }
+</style>
