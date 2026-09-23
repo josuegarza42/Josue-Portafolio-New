@@ -1,4 +1,6 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { language, t, path, localize } = createI18n(Astro.url);
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card/index.astro";
 import IntroCard from "../components/IntroCard.astro";
@@ -7,14 +9,20 @@ import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
-import { EXPERIENCE, PROFILE } from "../data/profile";
-import { AWARDS, CREDENTIALS, PORTFOLIO_PROJECTS, WORK_HISTORY } from "../data/career";
-import { VISITED_COUNTRIES } from "../data/travel";
+import { EXPERIENCE as source_EXPERIENCE, PROFILE as source_PROFILE } from "../data/profile";
+import { AWARDS as source_AWARDS, CREDENTIALS as source_CREDENTIALS, PORTFOLIO_PROJECTS as source_PORTFOLIO_PROJECTS, WORK_HISTORY as source_WORK_HISTORY } from "../data/career";
+import { VISITED_COUNTRIES as source_VISITED_COUNTRIES } from "../data/travel";
+const EXPERIENCE = localize(source_EXPERIENCE);
+const PROFILE = localize(source_PROFILE);
+const AWARDS = localize(source_AWARDS);
+const CREDENTIALS = localize(source_CREDENTIALS);
+const PORTFOLIO_PROJECTS = localize(source_PORTFOLIO_PROJECTS);
+const WORK_HISTORY = localize(source_WORK_HISTORY);
+const VISITED_COUNTRIES = localize(source_VISITED_COUNTRIES);
 ---
 
 <script>
   import { stagger, animate } from "motion";
-  animate(".loader", { opacity: 0, pointerEvents: "none" }, { duration: .15 });
   const cards = document.querySelectorAll(".card");
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     animate(cards, { y: 0, opacity: 1 }, { duration: 0 });
@@ -23,18 +31,18 @@ import { VISITED_COUNTRIES } from "../data/travel";
   }
 </script>
 
-<Layout description={PROFILE.description} title="Josue Garza | CX, AI & Automation">
+<Layout description={PROFILE.description} title={t("Josue Garza | CX, AI & Automation")}>
   <main class="portfolio text-white m-auto grid gap-4 max-w-6xl relative w-full p-4 md:p-6 md:grid-cols-2 lg:grid-cols-4">
     <IntroCard />
     <AboutMe />
     <ContactsCard />
     <TimeZone />
     <Now />
-    <Card colSpan="md:col-span-1" href="/travel" rowSpan="lg:row-span-2" title="Countries I've visited">
-      <p class="country-count">{VISITED_COUNTRIES.length} countries and counting</p>
-      <div class="globe-preview" aria-hidden="true"><Globe client:visible /></div>
+    <Card colSpan="md:col-span-1" href={path("/travel")} rowSpan="lg:row-span-2" title={t("Countries I've visited")}>
+      <p class="country-count">{VISITED_COUNTRIES.length} {t("countries and counting")}</p>
+      <div class="globe-preview" aria-hidden="true"><Globe language={language} client:visible /></div>
     </Card>
-    <Card colSpan="md:col-span-1" href="/blog" rowSpan="lg:row-span-4" title="Career highlights">
+    <Card colSpan="md:col-span-1" href={path("/blog")} rowSpan="lg:row-span-4" title={t("Career highlights")}>
       <ol class="experience-preview">
         {EXPERIENCE.map((job) => (
           <li>
@@ -44,18 +52,17 @@ import { VISITED_COUNTRIES } from "../data/travel";
           </li>
         ))}
       </ol>
-      <p class="all-experience">Explore all {WORK_HISTORY.length} roles →</p>
+      <p class="all-experience">{t("Explore all")} {WORK_HISTORY.length} {t("roles →")}</p>
     </Card>
     <Card colSpan="md:col-span-1" rowSpan="lg:row-span-2">
-      <a class="projects-link" href="/blog">Experience & beyond →</a>
-      <p class="journey-intro">The projects, learning, and communities behind my work.</p>
+      <a class="projects-link" href={path("/blog")}>{t("Experience & beyond →")}</a>
+      <p class="journey-intro">{t("The projects, learning, and communities behind my work.")}</p>
       <ul class="journey-links">
-        <li><a href="/blog#projects">{PORTFOLIO_PROJECTS.length} projects <span aria-hidden="true">↗</span></a></li>
-        <li><a href="/blog#recognition">{AWARDS.length} honors & awards <span aria-hidden="true">↗</span></a></li>
-        <li><a href="/blog#certifications">{CREDENTIALS.length} credentials <span aria-hidden="true">↗</span></a></li>
-        <li><a href="/blog#community">Community & founding <span aria-hidden="true">↗</span></a></li>
+        <li><a href={path("/blog#projects")}>{PORTFOLIO_PROJECTS.length} {t("projects")} <span aria-hidden="true">↗</span></a></li>
+        <li><a href={path("/blog#recognition")}>{AWARDS.length} {t("honors & awards")} <span aria-hidden="true">↗</span></a></li>
+        <li><a href={path("/blog#certifications")}>{CREDENTIALS.length} {t("credentials")} <span aria-hidden="true">↗</span></a></li>
+        <li><a href={path("/blog#community")}>{t("Community & founding")} <span aria-hidden="true">↗</span></a></li>
       </ul>
-      <p class="copyright">&copy; {new Date().getFullYear()} {PROFILE.name}</p>
     </Card>
   </main>
 </Layout>
@@ -77,5 +84,4 @@ import { VISITED_COUNTRIES } from "../data/travel";
   .journey-links { list-style: none; padding: 0; margin: 0; }
   .journey-links a { display: flex; justify-content: space-between; gap: .5rem; color: #d4c9e3; font-size: .78rem; padding: .65rem 0; border-bottom: 1px solid #38313f; text-decoration: none; }
   .journey-links a:hover { color: var(--color-primary-400); }
-  .copyright { color: #a3a3a3; font-size: .75rem; margin-top: 1rem; }
 </style>

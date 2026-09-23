@@ -2,6 +2,10 @@
 import "../styles/theme.css";
 import { LINKS } from "../lib/constants";
 import { PROFILE } from "../data/profile";
+import SiteNavigation from "../components/SiteNavigation.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { createI18n, localizedPath } from "../lib/i18n";
+const { language, t } = createI18n(Astro.url);
 
 interface Props {
   title: string;
@@ -11,7 +15,9 @@ interface Props {
   pubDate?: string;
 }
 
-const { title, description, page, pubDate } = Astro.props;
+const { title: originalTitle, description: originalDescription, page, pubDate } = Astro.props;
+const title = t(originalTitle);
+const description = t(originalDescription);
 const site = Astro.site ?? Astro.url;
 const canonical = new URL(Astro.url.pathname, site);
 const image = new URL("/og-image2.png", site).href;
@@ -25,7 +31,7 @@ const schema =
         url: site.origin,
         sameAs: [LINKS.linkedin, LINKS.github],
         image,
-        jobTitle: PROFILE.role,
+        jobTitle: t(PROFILE.role),
         worksFor: {
           "@type": "Organization",
           name: PROFILE.company,
@@ -44,6 +50,7 @@ const schema =
     : {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
+        inLanguage: language,
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": canonical.href,
@@ -71,7 +78,7 @@ const schema =
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width" name="viewport" />
@@ -84,6 +91,8 @@ const schema =
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
     <meta content="website" property="og:type" />
+    <meta content={language === "es" ? "es_MX" : "en_US"} property="og:locale" />
+    <meta content={language === "es" ? "en_US" : "es_MX"} property="og:locale:alternate" />
     <meta content={canonical.href} property="og:url" />
     <meta
       content={image || `${Astro.url.origin}/og-image2.png`}
@@ -100,6 +109,9 @@ const schema =
 
     <link href="https://cdn.fontshare.com" rel="preconnect" />
     <link href={canonical.href} rel="canonical" />
+    <link rel="alternate" hreflang="en" href={new URL(localizedPath(Astro.url.pathname, "en"), site).href} />
+    <link rel="alternate" hreflang="es" href={new URL(localizedPath(Astro.url.pathname, "es"), site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(localizedPath(Astro.url.pathname, "en"), site).href} />
     <script
       is:inline
       set:html={JSON.stringify(schema)}
@@ -110,7 +122,9 @@ const schema =
     class="bg-darkslate-700 min-h-screen flex flex-col items-center"
   >
     <slot name="loader" />
+    <SiteNavigation />
     <slot />
+    <SiteFooter />
   </body>
 </html>
 

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 310" fill="none">
+ <defs>
+  <linearGradient id="body" x1="365" y1="121" x2="365" y2="252" gradientUnits="userSpaceOnUse"><stop stop-color="#f0f0e9"/><stop offset=".34" stop-color="#bdc3be"/><stop offset=".66" stop-color="#dfe1d9"/><stop offset="1" stop-color="#838e87"/></linearGradient>
+  <linearGradient id="glass" x1="350" y1="90" x2="399" y2="182" gradientUnits="userSpaceOnUse"><stop stop-color="#60736e"/><stop offset="1" stop-color="#293d37"/></linearGradient>
+  <radialGradient id="tire"><stop offset=".57" stop-color="#202a24"/><stop offset=".6" stop-color="#151c18"/><stop offset=".86" stop-color="#343b34"/><stop offset="1" stop-color="#151c18"/></radialGradient>
+  <g id="wheel"><circle r="49" fill="url(#tire)"/><circle r="33" fill="#919b91" stroke="#d2d4c9" stroke-width="3"/><circle r="26" fill="#424d45"/><path d="M-5-25 4-25 7-7 23-13 27-5 10 4 23 19 16 25 1 11-12 27-20 21-9 4-28-3-25-12-7-7Z" fill="#d2d6ca"/><circle r="9" fill="#87978c" stroke="#e1e3d7" stroke-width="2"/><circle r="3" fill="#34443b"/></g>
+ </defs>
+ <ellipse cx="381" cy="278" rx="302" ry="15" fill="#34473b" opacity=".13"/>
+ <path d="m67 198 21-29 83-15 99-63c14-9 29-13 48-13h122c17 0 32 4 46 15l78 60 92 19 35 25 10 45-16 13H81l-22-17Z" fill="url(#body)" stroke="#74837a" stroke-width="2"/>
+ <path d="m187 153 94-59 28-5h125l35 13 63 51Z" fill="url(#glass)" stroke="#e6e7df" stroke-width="4"/>
+ <path d="m355 88 2 67m11-67 3 67m-91-60-46 58" stroke="#182e25" stroke-width="7"/>
+ <path d="m294 96 49-2-77 51-27 3Z" fill="#b5cac0" opacity=".32"/>
+ <path d="m388 96 47 1 51 42-31 1Z" fill="#9aafa5" opacity=".17"/>
+ <path d="m72 190 70-11 352-10 80-11m-356 20-11 57 124 1m25-75 4 73h153l-18-68" stroke="#6f8076" stroke-width="1.6"/>
+ <path d="m100 216 70-10h367l119 4m-391 30h268" stroke="#f6f7ed" stroke-width="2" opacity=".8"/>
+ <path d="m73 183 53-10-3 17-43 9Z" fill="#9c4a36" stroke="#c5c7b8" stroke-width="2"/>
+ <path d="m611 177 43 9 22 20-58-10Z" fill="#f1f0c9" stroke="#7e8c7c" stroke-width="2"/>
+ <path d="m657 224 33 1-2 10h-29Z" fill="#3b5043"/>
+ <path d="M128 249a57 57 0 0 1 114 0m291 0a57 57 0 0 1 114 0" fill="#1c2c22"/>
+ <path d="m249 250 277 1" stroke="#506453" stroke-width="8"/>
+ <use href="#wheel" x="185" y="241"/><use href="#wheel" x="590" y="241"/>
+ <rect x="307" y="175" width="24" height="6" rx="3" fill="#718577"/><rect x="448" y="173" width="24" height="6" rx="3" fill="#718577"/>
+ <path d="m508 151-11-8-12 3 2 16h22Z" fill="#b8c2b6" stroke="#607567" stroke-width="2"/>
+ <path d="m80 221 25 2" stroke="#7c8e7c" stroke-width="2"/>
+</svg>

@@ -1,5 +1,6 @@
 ---
-import { formatDate } from "../lib/helpers";
+import { createI18n } from "../lib/i18n";
+const { language, t, path } = createI18n(Astro.url);
 import BasicLayout from "./BasicLayout.astro";
 
 type Props = {
@@ -16,10 +17,10 @@ const { title, description, pubDate, period, minutesRead, url } = Astro.props;
 
 <BasicLayout description={description} page="blog" slug={url} pubDate={pubDate.toISOString()} title={`${title} | Josue Garza`}>
   <main class="detail-page">
-    <a class="back" href="/blog">← Experience & beyond</a>
+    <a class="back" href={path("/blog")}>{t("← Experience & beyond")}</a>
     <header>
       <h1>{title}</h1>
-      <div class="detail-meta"><p>{period || formatDate(pubDate)}</p><p>{minutesRead}</p></div>
+      <div class="detail-meta"><p>{period ? t(period) : pubDate.toLocaleDateString(language === "es" ? "es-MX" : "en-US", { year: "numeric", month: "long", day: "numeric" })}</p><p>{t(minutesRead)}</p></div>
     </header>
     <article><slot /></article>
   </main>

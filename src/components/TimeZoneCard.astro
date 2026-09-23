@@ -1,14 +1,16 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { language, t } = createI18n(Astro.url);
 import Card from "./Card/index.astro";
 const now = new Date();
-const formatTime = (date: Date) => new Intl.DateTimeFormat("en-US", {
+const formatTime = (date: Date) => new Intl.DateTimeFormat(language === "es" ? "es-MX" : "en-US", {
   hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true, timeZone: "America/Mexico_City",
 }).format(date);
 ---
 
 <script>
   const clock = document.getElementById("timeDisplay");
-  const formatter = new Intl.DateTimeFormat("en-US", {
+  const formatter = new Intl.DateTimeFormat(document.documentElement.lang === "es" ? "es-MX" : "en-US", {
     hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true, timeZone: "America/Mexico_City",
   });
   const updateClock = () => {
@@ -20,9 +22,9 @@ const formatTime = (date: Date) => new Intl.DateTimeFormat("en-US", {
   document.addEventListener("astro:before-swap", () => clearInterval(interval), { once: true });
 </script>
 
-<Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="lg:row-span-2" title="Mexico City time">
+<Card colSpan="md:col-span-1 lg:col-span-2" rowSpan="lg:row-span-2" title={t("Mexico City time")}>
   <time datetime={now.toISOString()} id="timeDisplay">{formatTime(now)}</time>
-  <p>America/Mexico_City · UTC−6</p>
+  <p>{t("America/Mexico_City · UTC−6")}</p>
 </Card>
 
 <style>

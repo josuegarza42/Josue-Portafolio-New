@@ -1,17 +1,20 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { t, path, localize } = createI18n(Astro.url);
 import Card from "./Card/index.astro";
-import { PROFILE } from "../data/profile";
+import { PROFILE as source_PROFILE } from "../data/profile";
+const PROFILE = localize(source_PROFILE);
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="lg:row-span-6" title="About me">
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-6" title={t("About me")}>
   <div class="about-copy">
-    <p>I work at the intersection of customer experience, professional services, and technology.</p>
-    <p>My focus is solution design, CRM implementation, support automation, and leading projects from scoping to delivery.</p>
-    <h3>Engineering foundation</h3>
+    <p>{t("I work at the intersection of customer experience, professional services, and technology.")}</p>
+    <p>{t("My focus is solution design, CRM implementation, support automation, and leading projects from scoping to delivery.")}</p>
+    <h3>{t("Engineering foundation")}</h3>
     <p>{PROFILE.education}<br /><span>{PROFILE.university}</span></p>
-    <h3>How I work</h3>
-    <p>Clear stakeholder communication, Agile delivery, and practical guidance that helps teams adopt the solutions we build.</p>
-    <a href="/blog#education">Education & skills →</a>
+    <h3>{t("How I work")}</h3>
+    <p>{t("Clear stakeholder communication, Agile delivery, and practical guidance that helps teams adopt the solutions we build.")}</p>
+    <a href={path("/blog#education")}>{t("Education & skills →")}</a>
   </div>
 </Card>
 

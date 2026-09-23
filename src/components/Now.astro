@@ -1,13 +1,17 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { t, localize } = createI18n(Astro.url);
 import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
-import { EXPERIENCE, PROFILE } from "../data/profile";
+import { EXPERIENCE as source_EXPERIENCE, PROFILE as source_PROFILE } from "../data/profile";
+const EXPERIENCE = localize(source_EXPERIENCE);
+const PROFILE = localize(source_PROFILE);
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="lg:row-span-2" title="Currently">
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-2" title={t("Currently")}>
   <div class="current-role">
     <a href={PROFILE.companyUrl} target="_blank" rel="noopener noreferrer">{PROFILE.company}</a>
-    <span aria-label="Current position"><Pulse /></span>
+    <span aria-label={t("Current position")}><Pulse /></span>
   </div>
   <p class="role">{PROFILE.role}</p>
   <p class="period">{EXPERIENCE[0].period}</p>

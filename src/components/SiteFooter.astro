@@ -1,0 +1,18 @@
+---
+import { createI18n } from "../lib/i18n";
+const { t } = createI18n(Astro.url);
+---
+<footer class="site-footer">
+  <small>&copy; {new Date().getFullYear()} Josue Garza</small>
+  <a class="personal-access" href="/garage/" rel="nofollow" aria-label={t("Personal area")} title={t("Personal area")}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9m-4-4 3-3m-6 0 3-3"/></svg>
+  </a>
+</footer>
+<style>
+  .site-footer { width: 100%; max-width: 72rem; padding: .5rem 1.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #96909e; }
+  small { font-size: .72rem; }
+  .personal-access { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #77717e; }
+  .personal-access:hover, .personal-access:focus-visible { color: var(--color-primary-500); background: #25212c; }
+  @media (max-width: 600px) { .site-footer { padding-inline: 1rem; } }
+  @media print { .personal-access { display: none; } }
+</style>

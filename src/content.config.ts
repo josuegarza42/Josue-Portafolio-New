@@ -7,4 +7,9 @@ const blog = defineCollection({
   schema: rssSchema.extend({ period: z.string().optional() }),
 });
 
-export const collections = { blog };
+const blogEs = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/data/blog-es" }),
+  schema: rssSchema.extend({ period: z.string().optional() }),
+});
+
+export const collections = { blog, blogEs };

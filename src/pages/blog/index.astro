@@ -1,9 +1,22 @@
 ---
+import { createI18n } from "../../lib/i18n";
+const { t, path, localize } = createI18n(Astro.url);
 import BasicLayout from "../../layouts/BasicLayout.astro";
 import CareerEntry from "../../components/CareerEntry.astro";
-import { PROFILE, SKILL_GROUPS } from "../../data/profile";
-import { AWARDS, COMMUNITY, CREDENTIALS, CREDENTIAL_GROUPS, EDUCATION, LANGUAGES, PORTFOLIO_PROJECTS, VOLUNTEERING, WORK_HISTORY } from "../../data/career";
+import { PROFILE as source_PROFILE, SKILL_GROUPS as source_SKILL_GROUPS } from "../../data/profile";
+import { AWARDS as source_AWARDS, COMMUNITY as source_COMMUNITY, CREDENTIALS as source_CREDENTIALS, CREDENTIAL_GROUPS as source_CREDENTIAL_GROUPS, EDUCATION as source_EDUCATION, LANGUAGES as source_LANGUAGES, PORTFOLIO_PROJECTS as source_PORTFOLIO_PROJECTS, VOLUNTEERING as source_VOLUNTEERING, WORK_HISTORY as source_WORK_HISTORY } from "../../data/career";
 import { LINKS } from "../../lib/constants";
+const PROFILE = localize(source_PROFILE);
+const SKILL_GROUPS = localize(source_SKILL_GROUPS);
+const AWARDS = localize(source_AWARDS);
+const COMMUNITY = localize(source_COMMUNITY);
+const CREDENTIALS = localize(source_CREDENTIALS);
+const CREDENTIAL_GROUPS = localize(source_CREDENTIAL_GROUPS);
+const EDUCATION = localize(source_EDUCATION);
+const LANGUAGES = localize(source_LANGUAGES);
+const PORTFOLIO_PROJECTS = localize(source_PORTFOLIO_PROJECTS);
+const VOLUNTEERING = localize(source_VOLUNTEERING);
+const WORK_HISTORY = localize(source_WORK_HISTORY);
 
 const featuredWork = WORK_HISTORY.filter((entry) => entry.featured);
 const otherWork = WORK_HISTORY.filter((entry) => !entry.featured);
@@ -19,55 +32,55 @@ const sections = [
 ];
 ---
 
-<BasicLayout description="Explore Josue Garza's professional experience, projects, awards, certifications, community work, and education." title="Experience & beyond | Josue Garza">
+<BasicLayout description={t("Explore Josue Garza's professional experience, projects, awards, certifications, community work, and education.")} title={t("Experience & beyond | Josue Garza")}>
   <main class="career-page" id="top">
-    <a class="back" href="/">← Back to portfolio</a>
+    <a class="back" href={path("/")}>{t("← Back to portfolio")}</a>
     <header class="page-header">
       <div>
-        <p class="eyebrow">The professional journey</p>
-        <h1>Experience <span>& beyond.</span></h1>
-        <p class="intro">From technical support to AI-powered customer experiences. The work, projects, and communities that shaped how I build solutions.</p>
+        <p class="eyebrow">{t("The professional journey")}</p>
+        <h1>{t("Experience")} <span>{t("& beyond.")}</span></h1>
+        <p class="intro">{t("From technical support to AI-powered customer experiences. The work, projects, and communities that shaped how I build solutions.")}</p>
       </div>
       <div class="header-links">
-        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View résumé <span aria-hidden="true">↗</span></a>
-        <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">{t("View résumé")} <span aria-hidden="true">↗</span></a>
+        <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">{t("Connect on LinkedIn")} <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <div class="career-layout">
-      <nav class="section-nav" aria-label="Professional profile sections">
+      <nav class="section-nav" aria-label={t("Professional profile sections")}>
         {sections.map((section, index) => (
           <a href={`#${section.id}`} data-section={section.id}>
             <span class="nav-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-            <span><span class="nav-label">{section.label}</span><span class="nav-detail">{section.detail}</span></span>
+            <span><span class="nav-label">{t(section.label)}</span><span class="nav-detail">{t(section.detail)}</span></span>
           </a>
         ))}
       </nav>
 
       <div class="sections">
         <section id="experience" aria-labelledby="experience-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">01 / Career</p><h2 id="experience-heading">Professional experience</h2></div><span class="count">{WORK_HISTORY.length} roles</span></div>
-          <p class="section-intro">A foundation in support and engineering, grown through research, entrepreneurship, and enterprise consulting.</p>
+          <div class="section-heading"><div><p class="eyebrow">{t("01 / Career")}</p><h2 id="experience-heading">{t("Professional experience")}</h2></div><span class="count">{WORK_HISTORY.length} {t("roles")}</span></div>
+          <p class="section-intro">{t("A foundation in support and engineering, grown through research, entrepreneurship, and enterprise consulting.")}</p>
           <div class="entry-list">{featuredWork.map((entry) => <CareerEntry entry={entry} kind="experience" />)}</div>
           <details class="collection" id="earlier-experience">
-            <summary><span>More experience<span class="collection-subtitle">Research, founding roles, and earlier positions</span></span><span class="collection-count">{otherWork.length} roles <span aria-hidden="true">＋</span></span></summary>
+            <summary><span>{t("More experience")}<span class="collection-subtitle">{t("Research, founding roles, and earlier positions")}</span></span><span class="collection-count">{otherWork.length} {t("roles")} <span aria-hidden="true">＋</span></span></summary>
             <div class="entry-list collection-body">{otherWork.map((entry) => <CareerEntry entry={entry} kind="experience" />)}</div>
           </details>
         </section>
 
         <section id="projects" aria-labelledby="projects-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">02 / Making things happen</p><h2 id="projects-heading">Projects</h2></div><span class="count">{PORTFOLIO_PROJECTS.length} projects</span></div>
-          <p class="section-intro">Selected work across customer needs, learning, and social impact. Open a project to explore my contribution and its supporting links.</p>
+          <div class="section-heading"><div><p class="eyebrow">{t("02 / Making things happen")}</p><h2 id="projects-heading">{t("Projects")}</h2></div><span class="count">{PORTFOLIO_PROJECTS.length} {t("projects")}</span></div>
+          <p class="section-intro">{t("Selected work across customer needs, learning, and social impact. Open a project to explore my contribution and its supporting links.")}</p>
           <div class="entry-list">{featuredProjects.map((entry) => <CareerEntry entry={entry} kind="project" />)}</div>
           <details class="collection" id="more-projects">
-            <summary><span>More projects<span class="collection-subtitle">Hackathons, products, and early explorations</span></span><span class="collection-count">{otherProjects.length} projects <span aria-hidden="true">＋</span></span></summary>
+            <summary><span>{t("More projects")}<span class="collection-subtitle">{t("Hackathons, products, and early explorations")}</span></span><span class="collection-count">{otherProjects.length} {t("projects")} <span aria-hidden="true">＋</span></span></summary>
             <div class="entry-list collection-body">{otherProjects.map((entry) => <CareerEntry entry={entry} kind="project" />)}</div>
           </details>
         </section>
 
         <section id="recognition" aria-labelledby="recognition-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">03 / Milestones</p><h2 id="recognition-heading">Honors & awards</h2></div><span class="count">{AWARDS.length} recognitions</span></div>
-          <p class="section-intro">Team achievements in technology challenges, with the work behind each recognition one click away.</p>
+          <div class="section-heading"><div><p class="eyebrow">{t("03 / Milestones")}</p><h2 id="recognition-heading">{t("Honors & awards")}</h2></div><span class="count">{AWARDS.length} {t("recognitions")}</span></div>
+          <p class="section-intro">{t("Team achievements in technology challenges, with the work behind each recognition one click away.")}</p>
           <div class="awards-grid">
             {AWARDS.map((award) => (
               <article class="award" id={`award-${award.id}`}>
@@ -82,8 +95,8 @@ const sections = [
         </section>
 
         <section id="certifications" aria-labelledby="certifications-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">04 / Continuing to learn</p><h2 id="certifications-heading">Licenses & certifications</h2></div><span class="count">{CREDENTIALS.length} credentials</span></div>
-          <p class="section-intro">Training and credentials grouped by focus. Each entry includes its issuer, issue date, and credential link.</p>
+          <div class="section-heading"><div><p class="eyebrow">{t("04 / Continuing to learn")}</p><h2 id="certifications-heading">{t("Licenses & certifications")}</h2></div><span class="count">{CREDENTIALS.length} {t("credentials")}</span></div>
+          <p class="section-intro">{t("Training and credentials grouped by focus. Each entry includes its issuer, issue date, and credential link.")}</p>
           <div class="credential-groups">
             {CREDENTIAL_GROUPS.map((group) => {
               const credentials = CREDENTIALS.filter((credential) => credential.group === group.id);
@@ -92,7 +105,7 @@ const sections = [
                   <summary><span>{group.title}<span class="collection-subtitle">{group.description}</span></span><span class="collection-count">{credentials.length} <span aria-hidden="true">＋</span></span></summary>
                   <ul class="credential-list">
                     {credentials.map((credential) => (
-                      <li><div><h3>{credential.title}</h3><p>{credential.issuer} · Issued {credential.issued}</p></div><a href={credential.href} target="_blank" rel="noopener noreferrer" aria-label={`View credential: ${credential.title}`}>Credential <span aria-hidden="true">↗</span></a></li>
+                      <li><div><h3>{credential.title}</h3><p>{credential.issuer} {t("· Issued")} {credential.issued}</p></div><a href={credential.href} target="_blank" rel="noopener noreferrer" aria-label={`${t("View credential")}: ${credential.title}`}>{t("Credential")} <span aria-hidden="true">↗</span></a></li>
                     ))}
                   </ul>
                 </details>
@@ -102,25 +115,25 @@ const sections = [
         </section>
 
         <section id="community" aria-labelledby="community-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">05 / Building together</p><h2 id="community-heading">Community & organizations</h2></div></div>
+          <div class="section-heading"><div><p class="eyebrow">{t("05 / Building together")}</p><h2 id="community-heading">{t("Community & organizations")}</h2></div></div>
           {COMMUNITY.map((community) => (
             <article class="community-card" id={community.id}>
-              <div class="community-monogram" aria-hidden="true">S.</div>
-              <div><p class="small-meta">{community.role} · {community.period}</p><h3>{community.title}</h3><p>{community.summary}</p><p>{community.detail}</p><a href={community.href} target="_blank" rel="noopener noreferrer">Meet the community ↗</a></div>
+              <div class="community-monogram" aria-hidden="true">{t("S.")}</div>
+              <div><p class="small-meta">{community.role} · {community.period}</p><h3>{community.title}</h3><p>{community.summary}</p><p>{community.detail}</p><a href={community.href} target="_blank" rel="noopener noreferrer">{t("Meet the community ↗")}</a></div>
             </article>
           ))}
-          <p class="community-note">My founding work also includes <a href="#experience-devsthink">Devsthink →</a></p>
-          <div class="volunteering"><h3>Volunteering</h3>{VOLUNTEERING.map((entry) => <div><p class="volunteer-role">{entry.title}</p><p class="small-meta">{entry.organization} · {entry.cause}</p></div>)}</div>
+          <p class="community-note">{t("My founding work also includes")} <a href="#experience-devsthink">{t("Devsthink →")}</a></p>
+          <div class="volunteering"><h3>{t("Volunteering")}</h3>{VOLUNTEERING.map((entry) => <div><p class="volunteer-role">{entry.title}</p><p class="small-meta">{entry.organization} · {entry.cause}</p></div>)}</div>
         </section>
 
         <section id="education" aria-labelledby="education-heading" data-profile-section>
-          <div class="section-heading"><div><p class="eyebrow">06 / Foundations</p><h2 id="education-heading">Education & skills</h2></div></div>
+          <div class="section-heading"><div><p class="eyebrow">{t("06 / Foundations")}</p><h2 id="education-heading">{t("Education & skills")}</h2></div></div>
           <article class="education-card"><p class="small-meta">{EDUCATION.period}</p><h3>{EDUCATION.degree}</h3><p class="university">{EDUCATION.institution}</p><p>{EDUCATION.summary}</p></article>
-          <div id="skills" class="skills"><h3>Areas of practice</h3><div class="skills-grid">{SKILL_GROUPS.map((group) => <details class="skill-group"><summary>{group.title}</summary><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></details>)}</div></div>
-          <div class="languages"><h3>Languages</h3><dl>{LANGUAGES.map((language) => <div><dt>{language.name}</dt><dd>{language.level}</dd></div>)}</dl></div>
+          <div id="skills" class="skills"><h3>{t("Areas of practice")}</h3><div class="skills-grid">{SKILL_GROUPS.map((group) => <details class="skill-group"><summary>{group.title}</summary><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></details>)}</div></div>
+          <div class="languages"><h3>{t("Languages")}</h3><dl>{LANGUAGES.map((language) => <div><dt>{language.name}</dt><dd>{language.level}</dd></div>)}</dl></div>
         </section>
 
-        <footer class="page-footer"><p>Let's build a better customer experience.</p><a href={`mailto:${PROFILE.email}`}>Get in touch ↗</a><a class="back-to-top" href="#top">Back to top ↑</a></footer>
+        <footer class="page-footer"><p>{t("Let's build a better customer experience.")}</p><a href={`mailto:${PROFILE.email}`}>{t("Get in touch ↗")}</a><a class="back-to-top" href="#top">{t("Back to top ↑")}</a></footer>
       </div>
     </div>
   </main>

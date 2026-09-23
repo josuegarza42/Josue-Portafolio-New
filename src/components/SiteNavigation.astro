@@ -1,0 +1,42 @@
+---
+import { createI18n, localizedPath } from "../lib/i18n";
+const { language, t, path } = createI18n(Astro.url);
+const pathname = localizedPath(Astro.url.pathname, "en").replace(/\/$/, "") || "/";
+const links = [
+  { href: "/", label: "Portfolio", active: pathname === "/" },
+  { href: "/blog", label: "Experience", active: pathname.startsWith("/blog") },
+  { href: "/travel", label: "Travel", active: pathname.startsWith("/travel") },
+];
+---
+<header class="site-navigation">
+  <a class="site-name" href={path("/")} aria-label={t("Josue Garza — home")}><span class="monogram" aria-hidden="true">JG</span><span>Josue Garza</span></a>
+  <nav class="site-links" aria-label={t("Site navigation")}>
+    {links.map((link) => <a href={path(link.href)} aria-current={link.active ? "page" : undefined}>{t(link.label)}</a>)}
+  </nav>
+  <nav class="language-switch" aria-label={t("Language")}>
+    <a href={localizedPath(Astro.url.pathname, "en")} hreflang="en" lang="en" data-language="en" aria-label="View in English" aria-current={language === "en" ? "page" : undefined}>EN</a>
+    <a href={localizedPath(Astro.url.pathname, "es")} hreflang="es" lang="es" data-language="es" aria-label="Ver en español" aria-current={language === "es" ? "page" : undefined}>ES</a>
+  </nav>
+</header>
+<script>
+  // Explicit language links work without JS; share the preference with the garage.
+  const language = document.documentElement.lang.startsWith("es") ? "es" : "en";
+  try { localStorage.setItem("josue.language", language); } catch { /* Optional preference. */ }
+  const preserveSection = () => document.querySelectorAll<HTMLAnchorElement>("[data-language]").forEach(link => { link.hash = location.hash; });
+  preserveSection();
+  window.addEventListener("hashchange", preserveSection);
+</script>
+<style>
+  .site-navigation { display: flex; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; width: 100%; max-width: 72rem; padding: 1rem 1.5rem .5rem; color: #f5f3f8; }
+  .site-name { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; color: inherit; text-decoration: none; font-size: .85rem; font-weight: 650; }
+  .monogram { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #51405e; border-radius: 9px; color: var(--color-primary-500); font-size: .7rem; letter-spacing: -.04em; }
+  nav { display: flex; align-items: center; gap: .25rem; }
+  .site-links { margin-left: auto; }
+  nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .5rem .85rem; border-radius: .5rem; color: #beb8c6; font-size: .8rem; text-decoration: none; }
+  nav a:hover { color: #f5f3f8; background: #25212c; }
+  nav a[aria-current="page"] { color: var(--color-primary-500); background: #2b2236; }
+  .language-switch { border-left: 1px solid #38313f; padding-left: .75rem; gap: .1rem; }
+  .language-switch a { padding-inline: .5rem; font-size: .72rem; font-weight: 600; }
+  @media (max-width: 600px) { .site-navigation { display: grid; grid-template-columns: 1fr auto; padding: .75rem 1rem 0; gap: .25rem .5rem; } .site-links { grid-column: 1 / -1; grid-row: 2; margin: 0; justify-content: center; } .language-switch { grid-column: 2; grid-row: 1; border: 0; padding: 0; } nav a { font-size: .75rem; } }
+  @media print { .site-navigation { display: none; } }
+</style>

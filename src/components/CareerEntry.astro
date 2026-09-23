@@ -1,7 +1,10 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { t, localize } = createI18n(Astro.url);
 import type { CareerEntry } from "../data/career";
 interface Props { entry: CareerEntry; kind: "experience" | "project" }
-const { entry, kind } = Astro.props;
+const { entry: sourceEntry, kind } = Astro.props;
+const entry = localize(sourceEntry);
 ---
 
 <details class:list={["profile-entry", { featured: entry.featured }]} id={`${kind}-${entry.id}`}>
@@ -10,14 +13,14 @@ const { entry, kind } = Astro.props;
       <span class="entry-meta"><span>{entry.organization}</span><span>{entry.period}</span></span>
       <span class="entry-title">{entry.title}</span>
       <span class="entry-description">{entry.summary}</span>
-      <span class="expand-label"><span class="closed-label">Explore details</span><span class="open-label">Close details</span></span>
+      <span class="expand-label"><span class="closed-label">{t("Explore details")}</span><span class="open-label">{t("Close details")}</span></span>
     </span>
     <span class="toggle" aria-hidden="true">+</span>
   </summary>
   <div class="entry-body">
     {entry.location && <p class="location">{entry.location}</p>}
     {entry.details && <ul class="contributions">{entry.details.map((detail) => <li>{detail}</li>)}</ul>}
-    {entry.tags && <ul class="tags" aria-label="Focus areas">{entry.tags.map((tag) => <li>{tag}</li>)}</ul>}
+    {entry.tags && <ul class="tags" aria-label={t("Focus areas")}>{entry.tags.map((tag) => <li>{tag}</li>)}</ul>}
     {entry.links && <div class="entry-links">{entry.links.map((link) => (
       <a href={link.href} target={link.href.startsWith("https://") ? "_blank" : undefined} rel={link.href.startsWith("https://") ? "noopener noreferrer" : undefined}>
         {link.label}<span aria-hidden="true"> {link.href.startsWith("https://") ? "↗" : "→"}</span>

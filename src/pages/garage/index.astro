@@ -1,0 +1,16 @@
+---
+import garage from "../../data/garage.html?raw";
+
+// Keep the standalone document intact, including its styles, scripts, and
+// noindex metadata. Prerendering makes it independent of local source files.
+export const prerender = true;
+// Resolve the original relative assets and downloads even when the URL is
+// opened without its trailing slash.
+const returnLink = '<a class="portfolio-return" href="/" data-portfolio-return><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>Volver al portafolio</span></a>';
+const document = garage
+  .replace("<head>", '<head>\n <base href="/garage/">')
+  .replace("</head>", '<link rel="stylesheet" href="/garage-integration.css"><script src="/garage-integration.js" defer></script></head>')
+  .replace(/(<button class="icon-button print-button"[\s\S]*?<\/button>)/, `<div class="portfolio-return-actions">${returnLink}$1</div>`);
+---
+
+<Fragment set:html={document} />

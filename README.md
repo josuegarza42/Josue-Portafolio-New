@@ -2,6 +2,8 @@
 
 A personal portfolio for my work in **customer experience, AI, automation, and solution delivery**. Built with Astro, with a responsive bento homepage, a complete professional profile with expandable entries, and an animated globe of the countries I have visited.
 
+Available in **English and Spanish**, including the full profile and individual career/project pages. The **EN / ES** selector keeps the current page and section when changing language.
+
 [Website](https://josuegarza.dev/) · [Résumé](https://flowcv.com/resume/its72h4324) · [LinkedIn](https://www.linkedin.com/in/josue-garza/) · [GitHub](https://github.com/josuegarza42)
 
 ## Professional focus
@@ -49,6 +51,7 @@ npm run dev
 | `npm run build` | Generate the production build and Netlify server output. |
 | `npm run preview` | Inherited Astro command; the current Netlify server adapter does not provide a preview server. |
 | `npm run eslint` | Run the repository's existing ESLint checks. |
+| `npm run sync:garage -- /path/to/Carro/web` | Refresh the imported garage from its original local project. Not required to run or build the site. |
 
 For local development, use `npm run dev`. To reproduce the deployed server environment, use a Netlify Deploy Preview rather than `npm run preview`.
 
@@ -62,6 +65,7 @@ Use npm consistently for dependency updates and commit `package-lock.json` when 
 | `/blog` | Complete professional profile: 10 roles, 12 projects, 6 honors and awards, 23 credentials, community, volunteering, education, and languages. |
 | `/blog/[id]` | Individual career or project entries. Existing URLs remain available. |
 | `/travel` | Globe and a readable list of visited countries, including the United States. |
+| `/es/`, `/es/blog`, `/es/travel`, `/es/blog/[id]` | Complete Spanish versions with the same stable entry IDs. |
 | `/rss.xml` | Feed of career and project entries. |
 
 The `/blog` path is kept for existing links, even though its content is professional experience rather than a conventional blog.
@@ -75,6 +79,9 @@ src/
 │   ├── profile.ts       # Shared profile facts, skills, and derived homepage highlights
 │   ├── career.ts        # Full structured history, projects, credentials, and recognition
 │   ├── travel.ts        # Visited-country labels and map identifiers
+│   ├── garage.html      # Imported garage document; rendered at /garage/
+│   ├── translations/es.json # Spanish UI and structured profile translations
+│   ├── blog-es/         # Complete Spanish versions of the 10 detail articles
 │   └── blog/            # Markdown used by the live career/project collection
 ├── content.config.ts    # Active Astro content loader and schema
 ├── layouts/             # Page layouts, metadata, and article typography
@@ -84,8 +91,12 @@ src/
 │   └── world.json       # GeoJSON used by the globe
 └── pages/               # Homepage, career pages, travel, and RSS
 public/                  # Images, fonts, favicon, and social preview image
+public/garage/           # Garage scripts, images, documents, and technical PDFs
+scripts/sync-garage.mjs  # Repeatable import from Carro/web, with edit protection
 docs/DESIGN_REVIEW.md    # Visual decisions and improvement proposals
 docs/CONTENT_SOURCES.md  # Source inventory and factual reconciliation
+docs/GARAGE_INTEGRATION.md # Integration, updates, and storage behavior
+docs/LANGUAGES.md        # Language routes, content maintenance, and checks
 ```
 
 ### Update professional information
@@ -98,6 +109,8 @@ docs/CONTENT_SOURCES.md  # Source inventory and factual reconciliation
 6. Run the checks and review desktop, mobile, keyboard navigation, expanded entries, and links into collapsed collections.
 
 The LinkedIn integration is a **curated import**, not a live synchronization or embedded LinkedIn page. It needs no LinkedIn credentials, API keys, or third-party scripts at runtime. Future profile changes should be reviewed and applied to the data file.
+
+Keep both languages aligned: update `src/data/translations/es.json` when profile or interface wording changes, and the matching article in `src/data/blog-es/` when an English detail article changes. See [language maintenance](docs/LANGUAGES.md).
 
 The profile uses a sticky section menu, native HTML disclosures, and four credential groups. The main content is rendered by Astro and remains readable without JavaScript; a small script adds section highlighting and opens nested entries for direct anchor links. See [content sources](docs/CONTENT_SOURCES.md) for scope and reconciliation notes.
 
@@ -144,6 +157,8 @@ npm run build
 ```
 
 Review `/`, `/blog`, one career entry, and `/travel` at both desktop and mobile widths. Confirm that links work, date ranges agree with the reconciled source notes, and the United States is highlighted on the globe.
+
+Review the same pages in Spanish and switch languages from a detail page and a section anchor. The optional personal section is reached through a small key icon in the footer; it has a visible return button in its header. See [integration notes](docs/GARAGE_INTEGRATION.md). It is excluded from the sitemap and retains its original `noindex, nofollow` metadata.
 
 The site uses `output: "server"` and the Netlify adapter in `astro.config.mjs`. Netlify's Astro integration handles the server functions generated by the build; this is not a static-only site that can be deployed by copying HTML alone. The build command is `npm run build` and the asset output directory is `dist`. Validate the connected site's Netlify settings before publishing.
 

@@ -1,25 +1,28 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { t, localize } = createI18n(Astro.url);
 import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
-import { PROFILE } from "../data/profile";
+import { PROFILE as source_PROFILE } from "../data/profile";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+const PROFILE = localize(source_PROFILE);
 ---
 
 <Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="lg:row-span-4">
   <div class="intro">
     <div class="intro-copy">
-      <p class="eyebrow">Customer experience · AI & automation</p>
+      <p class="eyebrow">{t("Customer experience · AI & automation")}</p>
       <h1>{PROFILE.name}</h1>
-      <p class="intro-role">{PROFILE.role} at {PROFILE.company}</p>
-      <p class="intro-summary">I turn complex customer requirements into practical AI and automation solutions — from solution design and client onboarding to project delivery.</p>
-      <nav class="intro-links" aria-label="Professional profiles">
-        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View résumé <Icon name="ri:arrow-right-up-line" /></a>
-        <a class="profile-link" aria-label="GitHub profile" href={LINKS.github} target="_blank" rel="noopener noreferrer"><Icon name="ri:github-fill" /></a>
-        <a class="profile-link" aria-label="LinkedIn profile" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="ri:linkedin-box-fill" /></a>
+      <p class="intro-role">{PROFILE.role} {t("at")} {PROFILE.company}</p>
+      <p class="intro-summary">{t("I turn complex customer requirements into practical AI and automation solutions — from solution design and client onboarding to project delivery.")}</p>
+      <nav class="intro-links" aria-label={t("Professional profiles")}>
+        <a class="resume-link" href={LINKS.resume} target="_blank" rel="noopener noreferrer">{t("View résumé")} <Icon name="ri:arrow-right-up-line" /></a>
+        <a class="profile-link" aria-label={t("GitHub profile")} href={LINKS.github} target="_blank" rel="noopener noreferrer"><Icon name="ri:github-fill" /></a>
+        <a class="profile-link" aria-label={t("LinkedIn profile")} href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="ri:linkedin-box-fill" /></a>
       </nav>
     </div>
-    <Image alt="Josue Garza monogram" class="intro-image" height="220" src="/J.png" width="220" />
+    <Image alt={t("Josue Garza monogram")} class="intro-image" height="220" src="/J.png" width="220" />
   </div>
 </Card>
 

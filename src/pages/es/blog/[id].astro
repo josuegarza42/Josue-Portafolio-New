@@ -1,0 +1,9 @@
+---
+import { getCollection } from "astro:content";
+import ProfileArticle from "../../../components/ProfileArticle.astro";
+export const prerender = true;
+export async function getStaticPaths() {
+  return (await getCollection("blogEs")).map(({ id }) => ({ params: { id } }));
+}
+---
+<ProfileArticle id={Astro.params.id!} />

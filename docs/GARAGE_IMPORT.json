@@ -1,0 +1,121 @@
+{
+  "source": "Carro/web",
+  "files": {
+    "app.js": {
+      "bytes": 22031,
+      "sha256": "3422d690d8fe42a8b3b2ac4201df345db601848bbc98b8c040a0c0fceb25635a"
+    },
+    "assets/README.md": {
+      "bytes": 2007,
+      "sha256": "206f59a578801b9c1d8a2dac9abc34a443fa485058d8014800ded6174e9dd2c6"
+    },
+    "assets/corolla-graphite.webp": {
+      "bytes": 160344,
+      "sha256": "eb51fa83e2e495b7b5c0c6f9afd86fa19bd98b2e63a52139d301250993346b38"
+    },
+    "assets/corolla.svg": {
+      "bytes": 2610,
+      "sha256": "7badc3d6106a23d7becce0f1993cd8e968ac76ef16fdf3b97d97b7d8fd5b5cd1"
+    },
+    "assets/favicon.svg": {
+      "bytes": 232,
+      "sha256": "0a907e3651b93ed20c9fc6191fea6f7e21b9eb50094acfbde143379743f7d7e2"
+    },
+    "assets/fit-red.webp": {
+      "bytes": 133948,
+      "sha256": "fa65acff746dd32b0b865e3f61daba687dcd64a20684eac147d0cd22881160b8"
+    },
+    "assets/fit.svg": {
+      "bytes": 2745,
+      "sha256": "f7bf036ac75a4f9a49b89ae063bb35f7623c7dc9f355e6cf56330ff59dbc0524"
+    },
+    "content-en.js": {
+      "bytes": 14524,
+      "sha256": "68c8b77a020f4e47e97e8a4fe36fef9c9fa093f693e55240fe63a3166f4f3d87"
+    },
+    "content.js": {
+      "bytes": 118396,
+      "sha256": "7f5fc0326589c494a5eca7b3d3765202a249dc3ade56020b93ca5b8eb9ba93fd"
+    },
+    "docs/comparison.md": {
+      "bytes": 5924,
+      "sha256": "9c3f1e5196555f37264372a9a4cfc9dbb9e6abc13bdb00c5bcba44fb6b8876bf"
+    },
+    "docs/corolla-assessment.md": {
+      "bytes": 8477,
+      "sha256": "df304e5ea8e5f506d968c58bc1a01f01f1e5abea8b48c8ff13383880762bb102"
+    },
+    "docs/corolla-checklist.md": {
+      "bytes": 8941,
+      "sha256": "b76b21926b00f505a81fdef8c11dc32e6103155df96fea1c71bf27cf89fea0ea"
+    },
+    "docs/corolla-maintenance.md": {
+      "bytes": 1875,
+      "sha256": "76f217fddb51520354454d008c8d442157eac736f65bfde159b37ac43f6d4662"
+    },
+    "docs/corolla-readme.md": {
+      "bytes": 7173,
+      "sha256": "400f49ba0b6905cd79d882eabb3922e0735e8c453a31559b9319ab3bf9939fd7"
+    },
+    "docs/fit-assessment.md": {
+      "bytes": 11428,
+      "sha256": "968d3e3deecc5404af0d2aa03554f410260955af6395b0a2649da8fa7c4fdc51"
+    },
+    "docs/fit-checklist.md": {
+      "bytes": 9268,
+      "sha256": "bf48a31807f1805565fcc81c08ac72e88745b31ba4b7b7d0b3718713db15db55"
+    },
+    "docs/fit-maintenance.md": {
+      "bytes": 1777,
+      "sha256": "b956359794aceec47c138f674757562e4923b4f9693c5f05f24d2777de0f9a3c"
+    },
+    "docs/fit-messages.md": {
+      "bytes": 1342,
+      "sha256": "9a4f24155d6077c2ef3b5ad42ea52bc72a935ac3d8ee26fa149ff105a7d05550"
+    },
+    "docs/fit-readme.md": {
+      "bytes": 13886,
+      "sha256": "40bca16f0bb81d1c633115b87684dd35c7124ca8f1981f607382800ff87c35ec"
+    },
+    "docs/history.md": {
+      "bytes": 22228,
+      "sha256": "d7012ca0a3e2bf3f72d83cfa380062316e6a8d3589313d410f46b3ecd2144f89"
+    },
+    "index.html": {
+      "bytes": 24965,
+      "sha256": "b0b4eb872a7e2a23131e31ab446c88b5ce8fd29546e746affbcb1568c1b7cdab"
+    },
+    "locale-en.js": {
+      "bytes": 28825,
+      "sha256": "ee1d2a51c51712a87e916161e4be2c772b42e4a3a46a9ef38453d428c6f44242"
+    },
+    "preferences.css": {
+      "bytes": 8897,
+      "sha256": "c43cf0c8d64cf82440578f4fbe68961d08fe32d33fb24373f9ae394b9e4b73f7"
+    },
+    "preferences.js": {
+      "bytes": 5133,
+      "sha256": "7d5dda365e7cd6c56c71e63c2c9115281eba3334252d58ccc808eb0d114e9e97"
+    },
+    "ranking.js": {
+      "bytes": 4007,
+      "sha256": "d4167af48cd123c84cd10b4a2f1ccdac5f2b6dda34dc8e2280bd2f0625db002d"
+    },
+    "references/honda-fit-2009-us-manual.pdf": {
+      "bytes": 17443182,
+      "sha256": "62082f961e4eae9e150e78db3b0d5ef60271569cdba51540cd25f6d00aea6214"
+    },
+    "references/toyota-tsb-0087-09-usa.pdf": {
+      "bytes": 53150,
+      "sha256": "d69d9fda9e19ea7f1a31bdadbe80b3d0061ce33c555b0094132a0f123653acc2"
+    },
+    "styles.css": {
+      "bytes": 40253,
+      "sha256": "8618a7bcbe6bbd47f647ebc047744f7bf2ffd1c1c1ffccea9e31e3054775bcc7"
+    },
+    "theme-init.js": {
+      "bytes": 318,
+      "sha256": "3d76015b9d68eeec25730879d5151dfaaefa908fdfaa12beab22806abc215121"
+    }
+  }
+}

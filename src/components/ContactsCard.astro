@@ -1,18 +1,21 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { t, localize } = createI18n(Astro.url);
 import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
-import { PROFILE } from "../data/profile";
+import { PROFILE as source_PROFILE } from "../data/profile";
+const PROFILE = localize(source_PROFILE);
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="lg:row-span-4" title="Let's connect">
-  <p class="contact-intro">Have a CX challenge or a project in mind?</p>
+<Card colSpan="md:col-span-1" rowSpan="lg:row-span-4" title={t("Let's connect")}>
+  <p class="contact-intro">{t("Have a CX challenge or a project in mind?")}</p>
   <address>
-    <span class="label">Email</span>
+    <span class="label">{t("Email")}</span>
     <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
-    <span class="label">Based in</span>
+    <span class="label">{t("Based in")}</span>
     <span>{PROFILE.location}</span>
   </address>
-  <a class="resume" href={LINKS.resume} target="_blank" rel="noopener noreferrer">View full résumé ↗</a>
+  <a class="resume" href={LINKS.resume} target="_blank" rel="noopener noreferrer">{t("View full résumé ↗")}</a>
 </Card>
 
 <style>

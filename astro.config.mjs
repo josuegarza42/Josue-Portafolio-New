@@ -14,7 +14,7 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   site: "https://josuegarza.dev/",
   integrations: [
-    sitemap(),
+    sitemap({ filter: (page) => !new URL(page).pathname.startsWith("/garage") }),
     robotsTxt({
       sitemap: [
         "https://josuegarza.dev/sitemap-index.xml",
@@ -33,5 +33,7 @@ export default defineConfig({
   adapter: netlify({ edgeMiddleware: true }),
   vite: {
     assetsInclude: "**/*.riv",
+    // Keep the globe dependency available when Astro sync/check refreshes the cache.
+    optimizeDeps: { include: ["d3"] },
   },
 });

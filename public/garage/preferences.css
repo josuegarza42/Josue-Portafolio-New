@@ -1,0 +1,77 @@
+[hidden]{display:none!important}
+.preferences-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:19px}
+.portfolio-back{font-size:10px;color:var(--muted);text-underline-offset:4px}
+.portfolio-back:hover{color:var(--ink);text-decoration:underline}
+.preference-controls{display:flex;align-items:center;gap:10px}
+.preference-controls select{font:inherit;font-size:10px;color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:7px 24px 7px 12px;background:var(--paper);cursor:pointer;max-width:120px}
+.preference-controls select:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.theme-switch{display:flex;align-items:center;justify-content:center;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:24px;font-size:10px;min-width:84px}
+.theme-switch .icon{width:15px;height:15px}.theme-sun{display:none}
+html[data-theme=night] .theme-moon{display:none}html[data-theme=night] .theme-sun{display:block}
+.exchange-settings{margin-top:15px;padding:15px 20px;background:var(--soft);border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;font-size:10px;color:var(--muted)}
+.exchange-settings>label{color:var(--ink);font-weight:550}
+.exchange-input{display:flex;align-items:center;gap:8px;color:var(--ink)}
+.exchange-input input{width:78px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);text-align:center;font-size:12px;padding:3px}
+.exchange-settings>p{max-width:500px;font-size:10px;line-height:1.6}
+#exchange-error:not(:empty){flex-basis:100%;color:var(--clay)}
+.document-language-note{padding:13px 16px;border:1px solid var(--line);border-radius:7px;background:var(--soft);font-size:11px;line-height:1.8;color:var(--muted);margin-bottom:25px}
+.document-language-note button{display:block;text-decoration:underline;text-underline-offset:3px;color:var(--ink);padding-bottom:0}
+.document-body .guide-facts{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;padding:15px 20px;background:var(--soft);border-radius:6px}.guide-facts dt{color:var(--muted)}.guide-facts dd{margin:0}
+html[data-theme=night]{color-scheme:dark;--paper:#131e2b;--ink:#e8edf2;--muted:#a9b6c3;--line:#354654;--sage:#88c5b7;--clay:#e7b480;--soft:#20303d}
+html[data-theme=night] .site-header{background:#131e2bf2;border-color:var(--line)}
+html[data-theme=night] .hero-note{border-color:var(--line)}
+html[data-theme=night] .vehicle-card{background:#20333e;border-color:#3b5360}
+html[data-theme=night] .fit-card{background:#332e37;border-color:#554753}
+html[data-theme=night] .badge.sage{background:#2f4d4b;color:#b9e3cf}
+html[data-theme=night] .badge.amber{background:#534336;color:#f0c395}
+html[data-theme=night] .vehicle-art img{filter:drop-shadow(0 13px 9px #0005)}
+html[data-theme=night] .vehicle-art .art-disc{border-color:#9acdc229;background:radial-gradient(circle,#7497991c,transparent 70%)}
+html[data-theme=night] .fit-card .vehicle-art .art-disc{border-color:#dfba9929;background:radial-gradient(circle,#b8887319,transparent 70%)}
+html[data-theme=night] .art-disc:before,html[data-theme=night] .art-disc:after{background:#b2cfdb16}
+html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .fit-card .vehicle-art figcaption,html[data-theme=night] .case-number,html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .hero-score span,html[data-theme=night] .card-bottom p{color:#bdc9d1}
+html[data-theme=night] .vehicle-stats{border-color:var(--line)}
+html[data-theme=night] .round-arrow{border-color:#839eaa}
+html[data-theme=night] .round-arrow:hover,html[data-theme=night] .icon-button:hover{background:var(--ink);color:var(--paper)}
+html[data-theme=night] .section-heading h2 em,html[data-theme=night] .budget-intro h2 em{color:var(--sage)}
+html[data-theme=night] .segmented{background:#21333f;border-color:#405360}
+html[data-theme=night] .segmented button{color:#b8c6d2}
+html[data-theme=night] .segmented button.selected{background:#86bdaf;color:#152a29;box-shadow:0 2px 7px #0003}
+html[data-theme=night] .rating-card{background:linear-gradient(135deg,#213c44,#192736);border-color:#3b5661}
+html[data-theme=night] .fit-rating{background:linear-gradient(135deg,#3b303d,#202838);border-color:#544955}
+html[data-theme=night] .score-ring{background:conic-gradient(from -90deg,var(--sage) calc(var(--score)*1%),#3c515a 0)}
+html[data-theme=night] .score-ring:before{background:#203440}
+html[data-theme=night] .fit-rating .score-ring{background:conic-gradient(from -90deg,var(--clay) calc(var(--score)*1%),#514554 0)}
+html[data-theme=night] .fit-rating .score-ring:before{background:#332f3d}
+html[data-theme=night] .rating-table thead th,html[data-theme=night] .document-body th{background:#263947}
+html[data-theme=night] .comparison-table tbody td:nth-child(2){background:#22343d50}
+html[data-theme=night] .comparison-table thead th{border-color:#567078}
+html[data-theme=night] .decision-band{background:#243c4b;color:#edf0ef}
+html[data-theme=night] .decision-inner .eyebrow,html[data-theme=night] .decision-index{color:#a3d1ca}
+html[data-theme=night] .decision-inner h2 em{color:#efc89c}
+html[data-theme=night] .decision-inner p:not(.eyebrow){color:#bacdd4}
+html[data-theme=night] .button-light{border-color:#8297a2;color:#edf3f4}
+html[data-theme=night] .button-light:hover{background:#e2ebea;color:#243c4b}
+html[data-theme=night] .progress-track{background:#304855}
+html[data-theme=night] .progress-track>span{background:var(--sage)}
+html[data-theme=night] .check-meta,html[data-theme=night] .check-detail,html[data-theme=night] .check-evidence,html[data-theme=night] .empty-state,html[data-theme=night] .pending-label{color:var(--muted)}
+html[data-theme=night] .priority-label{background:#4b3c35;color:#f0c297}
+html[data-theme=night] .check-control,html[data-theme=night] input[type=checkbox]{accent-color:var(--sage)}
+html[data-theme=night] .check-item.done .check-title>span:first-child{color:#86b9ab}
+html[data-theme=night] .check-evidence{border-color:#435866}
+html[data-theme=night] .filter-pills button{border-color:#405360;color:var(--muted)}
+html[data-theme=night] .filter-pills button.selected{background:#34594f;border-color:#537e71;color:#d4e9dc}
+html[data-theme=night] .budget-section{background:#1a2a37}
+html[data-theme=night] .budget-card{background:#233a46;border-color:#4a626d;box-shadow:0 10px 40px #0001}
+html[data-theme=night] .money-field,html[data-theme=night] .purchase-line .money-field:has(input:not([readonly])),html[data-theme=night] .budget-total{border-color:#58737d}
+html[data-theme=night] .money-field>span,html[data-theme=night] .money-field input::placeholder{color:#b9c9cf}
+html[data-theme=night] .budget-missing{color:#e2ba8f}
+html[data-theme=night] .money-field input:invalid{color:#ffa99c}
+html[data-theme=night] .archive-title>span:last-child,html[data-theme=night] .document-link>.icon:first-child{color:#9fb8b9}
+html[data-theme=night] dialog{border-color:#50616a;box-shadow:0 40px 100px #0006}
+html[data-theme=night] dialog::backdrop{background:#07121bc4}
+html[data-theme=night] .document-body a{color:#efbb8a}
+html[data-theme=night] .document-body code{background:#2a3d49}
+html[data-theme=night] .toast{background:#dcebe6;color:#192c31}
+@media(max-width:760px){.preferences-bar{padding-top:14px}.preference-controls{gap:6px}.preference-controls select{font-size:9px;padding:6px 17px 6px 10px;max-width:94px}.theme-switch{font-size:9px;min-width:72px;padding:6px 9px}.portfolio-back{font-size:9px}.exchange-settings{padding:13px;gap:8px 12px}.exchange-settings>p{font-size:9px;flex-basis:100%}}
+@media(max-width:360px){.preferences-bar{gap:8px;flex-wrap:wrap}.preference-controls{margin-left:auto}.theme-switch{min-width:58px;padding-inline:7px}.theme-switch .icon{width:12px}.preference-controls select{max-width:86px;padding-right:12px}.document-body .guide-facts{grid-template-columns:1fr;gap:3px}.guide-facts dd{margin-bottom:10px}}
+@media print{.preferences-bar{display:none}.exchange-settings{break-inside:avoid;background:white;color:#333;border-color:#aaa}.exchange-settings label,.exchange-input,.exchange-input input{color:#222}.exchange-settings input{border-color:#888}.document-language-note{background:#eee;color:#333}.document-language-note button{display:none}html[data-theme=night]{color-scheme:light;--paper:#fff;--ink:#25382f;--muted:#5a625d;--line:#bbb;--sage:#446954;--clay:#ad5238;--soft:#eee}html[data-theme=night] .site-header{background:white}html[data-theme=night] .rating-card,html[data-theme=night] .budget-card,html[data-theme=night] .budget-section{background:#f0f1eb;color:var(--ink)}html[data-theme=night] .score-ring:before{background:#f0f1eb}html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .hero-score span{color:#556258}}

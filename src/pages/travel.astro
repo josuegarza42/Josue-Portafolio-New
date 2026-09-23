@@ -1,19 +1,22 @@
 ---
+import { createI18n } from "../lib/i18n";
+const { language, t, path, localize } = createI18n(Astro.url);
 import Globe from "../components/Globe";
 import BasicLayout from "../layouts/BasicLayout.astro";
-import { VISITED_COUNTRIES } from "../data/travel";
+import { VISITED_COUNTRIES as source_VISITED_COUNTRIES } from "../data/travel";
+const VISITED_COUNTRIES = localize(source_VISITED_COUNTRIES);
 ---
 
-<BasicLayout description={`The ${VISITED_COUNTRIES.length} countries Josue Garza has visited, including the United States.`} page="travel" title="Countries I've visited | Josue Garza">
+<BasicLayout description={language === "es" ? `Los ${VISITED_COUNTRIES.length} países que ha visitado Josue Garza, incluido Estados Unidos.` : `The ${VISITED_COUNTRIES.length} countries Josue Garza has visited, including the United States.`} page="travel" title={t("Countries I've visited | Josue Garza")}>
   <main class="travel-page">
-    <a class="back" href="/">← Back to portfolio</a>
-    <h1>Countries I've visited</h1>
-    <p>{VISITED_COUNTRIES.length} countries. A growing collection of perspectives.</p>
-    <div class="travel-globe"><Globe client:load /></div>
-    <ul aria-label="Visited countries">
+    <a class="back" href={path("/")}>{t("← Back to portfolio")}</a>
+    <h1>{t("Countries I've visited")}</h1>
+    <p>{VISITED_COUNTRIES.length} {t("countries. A growing collection of perspectives.")}</p>
+    <div class="travel-globe"><Globe language={language} client:load /></div>
+    <ul aria-label={t("Visited countries")}>
       {VISITED_COUNTRIES.map((country) => <li>{country.name}</li>)}
     </ul>
-    <p class="legend"><span aria-hidden="true"></span> Visited countries are highlighted in purple.</p>
+    <p class="legend"><span aria-hidden="true"></span> {t("Visited countries are highlighted in purple.")}</p>
   </main>
 </BasicLayout>
 
