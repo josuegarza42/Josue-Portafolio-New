@@ -1,55 +1,70 @@
-# Honda Fit y Toyota Corolla 2010 - comparación y criterio de cuidado
+# Toyota Corolla 2010 XLE y Honda Fit 2010 EX — datos y cálculos
 
-Actualizado: **21 de septiembre de 2026**.
+Actualizado: **5 de octubre de 2026**.
 
-## ¿Ambos son buenos carros?
+## Datos confirmados por Josue
 
-**Ambos son opciones razonables dentro de los usados de su época si están bien mantenidos.** Es una valoración cualitativa del tipo de vehículo y configuración, no una estadística de fiabilidad ni garantía sobre nuestras unidades. Con aproximadamente 16 años y kilometrajes altos, el historial, el estado real y el mantenimiento pendiente pesan más que la reputación de Honda o Toyota.
+Ambos autos están comprados, emplacados, a nombre de Josue y **sin adeudos ni pagos pendientes**. Josue confirma las versiones **Corolla XLE automático** y **Fit EX automático**. La confirmación del propietario y las especificaciones publicadas se registran por separado; no se dispone aquí de una inspección mecánica completa.
 
-El **Corolla** ya se compró y la impresión personal de Josue fue muy favorable. Conviene completar el archivo y establecer una inspección de referencia para conservarlo. El **Fit** sigue siendo candidato: antes de comprarlo hay que explicar el ruido delantero, probar la transmisión y validar documentos. No se ha confirmado que el Fit sustituya al Corolla.
-
-## Comparación de las unidades
-
-| Aspecto | Honda Fit 2010 | Toyota Corolla 2010 XLE |
+| Dato | Toyota Corolla 2010 XLE | Honda Fit 2010 EX |
 |---|---|---|
-| Estado | En evaluación; sin compra ni pago confirmado | Comprado, según Josue |
-| Precio | $105,000 MXN solicitados | $125,500 MXN pagados |
-| Kilometraje | 200,000 km declarados por vendedor | 290,000 km actuales reportados por Josue el 21 sep 2026; fotografía pendiente. Los 185,200 km del anuncio histórico quedan por conciliar |
-| Motor de referencia | 1.5 L | 1.8 L, familia 2ZR-FE |
-| Automática de referencia | Convencional de cinco marchas, con convertidor de par | Convencional de cuatro marchas, con convertidor de par |
-| Confirmación específica | Versión, procedencia y NIV pendientes de cotejo | Referencia XLE AT de factura histórica; identificar físicamente y archivar NIV |
-| Uso destacado | Tamaño compacto y aprovechamiento del espacio; práctico en ciudad | Sedán, espacio y comodidad para uso cotidiano y viajes |
-| Consumo real | No medido en esta unidad | No medido en esta unidad |
-| Evidencia visual | Siete fotos y fragmentos visuales de video vistos en WhatsApp; originales no descargados | Observaciones históricas recuperadas e impresión personal de Josue; originales no recuperados |
-| Falla conocida por declaración | Ruido delantero sin diagnóstico | Ninguna falla mecánica actual reportada aquí |
-| Puntos de revisión propios | Bujías/roscas, mantenimiento de válvulas, semiejes, cajuela/tapa de combustible | Arranque frío/VVT-i si hay ruido, elevadores, bases de amortiguador; enfriamiento y quemacocos |
-| Caja y seguridad | Prueba en frío/caliente, escáner y campañas por NIV pendientes | Registrar inspección/historial y campañas por NIV |
-| Documentos | Factura original, pagos y baja SLP declarados; comprobación pendiente | Compra con factura Dalton y baja registradas históricamente; conservar cadena y confirmar alta/seguro |
+| Precio pagado | $125,500 MXN | $96,000 MXN |
+| Kilometraje | 250,000 km actuales reportados por Josue el 5 oct 2026 | 200,000 km históricos declarados por el vendedor; sin nueva lectura |
+| Servicios recientes | Cambio de aceite, limpieza del cuerpo de aceleración, bujías y filtro; tipo de filtro por registrar | Afinación y servicio de frenos; alcance y piezas por registrar |
+| Placas y titularidad | Emplacado, a nombre de Josue | Emplacado, a nombre de Josue |
+| Adeudos y pagos pendientes | $0 MXN | $0 MXN |
+| Consumo real | Sin medición registrada | Sin medición registrada |
+| Estado mecánico documentado | Sin dictamen completo; ninguna falla actual reportada aquí | Sin dictamen completo; ruido delantero declarado por el vendedor sin diagnóstico o resolución documentados |
 
-Las referencias de transmisión corresponden a las configuraciones descritas para México. No identificar la caja de un vehículo importado o modificado sólo por su año/modelo. En estas configuraciones no se trata de CVT; ello no demuestra que las cajas estén en buen estado.
+Los servicios fueron confirmados el 5 de octubre de 2026. Esa es la fecha del reporte, no necesariamente la de los trabajos. Faltan fechas exactas, kilometrajes de servicio, costos y comprobantes. La afinación y los frenos del Fit no acreditan la reparación del ruido delantero.
 
-## Fiabilidad, reparación y costo
+## Especificaciones publicadas para México
 
-- Ninguna automática es inmune a fallas. Un historial correcto y una prueba satisfactoria son más útiles que afirmar que una caja «no se rompe».
-- Una automática convencional no es necesariamente la reparación más barata. La caja manual suele ser más sencilla de reparar, pero también tiene componentes de desgaste; comparar costos exige diagnóstico y cotización.
-- Tampoco se puede concluir que toda CVT vaya a fallar. Diseño, aplicación, uso y mantenimiento importan; aquí la prioridad es verificar las transmisiones que realmente equipan los autos.
-- El Fit tiene menor precio solicitado, pero no se conoce el costo del ruido. Ese precio no establece que su costo total sea inferior.
-- No hay consumos medidos comparables ni presupuestos de reparación de estas unidades. No se prometen kilómetros restantes, ahorro de combustible exacto, valor de reventa ni costos de reconstrucción.
-- No se obtuvo una tasación actual verificada del Fit. La oferta orientativa de $95,000 y posible cierre de $95,000-$100,000 registrados anteriormente son estrategia de negociación condicionada a revisión favorable, no valor de mercado confirmado.
-- Los comparables del Corolla permanecen como antecedentes de septiembre; el precio de compra por sí solo no certifica una ganga ni un error de compra.
-
-## Prioridades prácticas
-
-| Prioridad | Fit | Corolla |
+| Parámetro | Corolla 1.8 XLE AT [1] | Fit 1.5 EX 5AT [2] |
 |---|---|---|
-| Primero | Diagnosticar ruido y comprobar seguridad para probarlo; revisar papeles | Confirmar situación de seguro/alta y reunir comprobantes de servicios |
-| Revisión mecánica | Arranque frío, caja caliente/bajo carga, escáner y parte inferior | Mismas comprobaciones de base, más puntos propios de su lista |
-| Después | Decidir compra con reparación y costo total cuantificados | Corregir lo diagnosticado y programar mantenimiento según manual e historial |
-| Seguimiento | Registrar compra sólo cuando se confirme | Registrar servicios y gasto real sin mezclarlo con estimaciones |
+| Cilindrada | 1.8 L | 1.5 L |
+| Cilindros | 4 | 4 |
+| Transmisión | Automática de 4 velocidades | Automática de 5 velocidades |
+| Carrocería | Sedán | Hatchback |
+| Puertas | 4 | 5 |
+| Plazas | 5 | 5 |
 
-## Expedientes y fuentes
+Fuentes comerciales secundarias consultadas el 5 de octubre de 2026. Identifican año y versión para el mercado mexicano; no son certificados del fabricante ni revisiones de los autos de Josue. El NIV, procedencia y equipo instalado están por cotejar. No se usan kilometrajes, precios o condición de las unidades anunciadas como datos de estos dos autos.
+
+## Parámetros y cálculos de compra
+
+Importes originales en MXN. Porcentajes redondeados a un decimal.
+
+| Estadística | Operación | Resultado |
+|---|---|---|
+| Total en compras | 125,500 + 96,000 | $221,500 MXN |
+| Fit por debajo de su anuncio | 105,000 − 96,000 | $9,000 MXN |
+| Reducción frente al anuncio del Fit | (9,000 ÷ 105,000) × 100 | 8.6% |
+| Diferencia de precio entre autos | 125,500 − 96,000 | $29,500 MXN |
+| Menor precio del Fit respecto al Corolla | (29,500 ÷ 125,500) × 100 | 23.5% |
+| Adeudos y pagos pendientes | Confirmación de Josue para ambos autos | $0 MXN |
+
+El precio solicitado histórico del Fit fue $105,000 MXN; no se suma como gasto. La diferencia frente al anuncio no demuestra un descuento sobre el valor de mercado. El total de compras excluye servicios, trámites y seguro, cuyos importes faltan en el registro. **Esos importes desconocidos no son deudas ni se tratan como cero.** La conversión opcional a USD usa el tipo de cambio editable de la página y no es una cotización en vivo.
+
+## Qué falta para más estadísticas reales
+
+- **Consumo real:** registrar kilómetros recorridos y litros repuestos entre llenados completos comparables. km/L = kilómetros ÷ litros; L/100 km = (litros ÷ kilómetros) × 100. Conservar condiciones de uso y varios registros antes de comparar.
+- **Costo de uso por kilómetro:** sumar gastos reales del mismo periodo y dividir entre los kilómetros de ese periodo. Faltan importes y lecturas de inicio/fin; definir qué gastos incluye antes de comparar.
+- **Estado mecánico y seguridad:** resultados de inspección, prueba de caja en frío/caliente, diagnóstico del ruido del Fit y campañas por NIV. Los servicios y trámites realizados no generan una puntuación mecánica.
+- **Confiabilidad y valor de mercado:** no hay una base estadística aplicable a estas unidades ni una tasación actual verificada. No se asignan calificaciones, probabilidades de falla ni kilómetros de vida restante.
+
+## Fuentes y alcance
+
+1. [Kavak México: Toyota Corolla 1.8 XLE AT Sedan 2010](https://www.kavak.com/mx/usado/toyota-corolla-18_xle_at-sedan-2010). Usada para cilindrada, cilindros, transmisión, carrocería, puertas y plazas.
+2. [Kavak México: Honda Fit 1.5 EX 5AT Hatchback 2010](https://www.kavak.com/mx/usado/honda-fit-15_ex_5at-hatchback-2010). Mismo alcance. La página mezcla cifras de aceleración y llama estimada a la potencia; no se usan esos datos ni su consumo como mediciones de esta unidad.
+3. [El Informador, 16 de octubre de 2010: Honda Fit EX manual](https://www.informador.mx/Suplementos/El-compacto-mas-capaz-20101016-0193.html). Referencia mexicana de época. La caja y las mediciones corresponden al manual probado, por lo que no se trasladan al EX automático de Josue.
+4. Confirmaciones de Josue del 5 de octubre de 2026 y antecedentes de compra en los expedientes. Las fuentes web no verifican precios pagados, trámites o servicios personales.
+
+Las imágenes de portada son referencias de la generación: Corolla XLE 2009 estadounidense con color recreado y Fit Sport 2009 estadounidense. No son fotografías de las unidades de Josue ni prueba de su equipo.
+
+## Expedientes
 
 - [Honda Fit: ficha](Honda_Fit_2010/README.md), [evaluación y fuentes](Honda_Fit_2010/ASSESSMENT_2026-09-21.md), [lista del mecánico](Honda_Fit_2010/INSPECTION_CHECKLIST_2026-09-21.md), [bitácora](Honda_Fit_2010/MAINTENANCE_LOG.md).
 - [Toyota Corolla: ficha](Toyota_Corolla_2010_XLE/README.md), [evaluación y fuentes](Toyota_Corolla_2010_XLE/ASSESSMENT_2026-09-21.md), [lista del mecánico](Toyota_Corolla_2010_XLE/INSPECTION_CHECKLIST_2026-09-21.md), [bitácora](Toyota_Corolla_2010_XLE/MAINTENANCE_LOG.md).
 
-Los boletines estadounidenses orientan inspección; no acreditan por sí solos cobertura mexicana. Consultar campañas y reparaciones efectuadas por NIV con cada marca. Las listas de problemas reportados no aportan una tasa de incidencia ni diagnostican los vehículos de Josue.
+Los boletines estadounidenses orientan la inspección; su cobertura en México se confirma por NIV. Los antecedentes de negociación conservados en los expedientes son históricos y no determinan las estadísticas actuales.

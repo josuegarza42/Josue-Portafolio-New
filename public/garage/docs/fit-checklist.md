@@ -1,15 +1,23 @@
-# Honda Fit 2010 automático: lista para inspección de compra
+# Honda Fit 2010 EX automático: lista de inspección y seguimiento
 
-Fecha: 21 de septiembre de 2026. Precio solicitado: $105,000 MXN. Kilometraje declarado: 200,000 km. Ruido delantero reconocido por el vendedor, sin diagnóstico. Compra e inspección física pendientes.
+**Versión EX automática confirmada por Josue el 5 de octubre de 2026.** La referencia publicada para México es 1.5 L EX 5AT; identificación por NIV y equipo instalado por cotejar.
 
-La lista distingue problemas reportados en la generación 2009-2013, mantenimiento programado y desgaste por edad. Ninguno de los puntos acredita que este vehículo tenga esa falla. Las fuentes estadounidenses no determinan la cobertura de campañas en México. Confirmar versión, procedencia y especificación con el NIV/VIN y documentos.
+Actualizado: 5 de octubre de 2026. Compra confirmada por Josue: **$96,000 MXN**. Kilometraje declarado por el vendedor: 200,000 km; sin una nueva lectura reportada. Afinación y servicio de frenos recientes confirmados; detalle y comprobantes pendientes en la [bitácora](MAINTENANCE_LOG.md). El ruido delantero sigue sin diagnóstico documentado. Las casillas mecánicas no acreditan inspecciones ya realizadas.
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
+
+- [x] Emplacamiento realizado.
+- [x] Titularidad a nombre de Josue.
+- [x] Sin adeudos ni pagos pendientes.
+
+La lista distingue problemas reportados en la generación 2009-2013, mantenimiento programado y desgaste por edad. Ninguno de los puntos acredita que este vehículo tenga esa falla. Las fuentes estadounidenses no determinan la cobertura de campañas en México. Versión EX confirmada por Josue; cotejar procedencia y especificación con el NIV/VIN y documentos.
 
 ## Preparación de la visita
 
 - [ ] Pedir que el auto permanezca apagado antes de la visita para observar un arranque realmente en frío.
 - [ ] Llevar mecánico independiente, escáner compatible con motor, transmisión, ABS y bolsas de aire, y disponer de acceso seguro a la parte inferior. Un lector OBD genérico puede no acceder a todos los módulos.
 - [ ] Solicitar facturas de mantenimiento, especialmente bujías, revisión de válvulas y fluido de transmisión; registrar fecha, kilometraje y producto utilizado.
-- [ ] Antes de circular, determinar si el ruido permite hacerlo con seguridad y resolver las condiciones legales de la prueba por la baja de placas. Una revisión estacionaria no comprueba el comportamiento de la caja bajo carga.
+- [ ] Antes de circular, determinar si el ruido permite hacerlo con seguridad y confirmar seguro vigente. El emplacamiento ya está resuelto. Una revisión estacionaria no comprueba el comportamiento de la caja bajo carga.
 
 ## Puntos prioritarios
 
@@ -78,9 +86,9 @@ Estos puntos son prudentes a los 200,000 km; no se presentan como defectos disti
 - [ ] Humedad: levantar tapetes y revisar el hueco de la llanta de refacción; buscar agua, olor a humedad y corrosión, sin asumir origen.
 - [ ] Funciones y carrocería: elevadores, seguros, luces, cierre y anclaje de asientos traseros abatibles, cinturones, reparaciones de choque y corrosión estructural.
 
-## Criterio para decidir
+## Seguimiento después de la compra
 
-No cerrar mientras falte explicar y cotizar el ruido delantero. Una reparación menor bien identificada puede negociarse. Patinamiento de transmisión, calentamiento, daño de roscas sin aclarar, daño estructural o fallas de seguridad requieren detener la decisión hasta conocer causa, alcance y costo. Si no es posible realizar una inspección suficiente, la incertidumbre permanece aunque el vendedor diga que todo funciona.
+Documentar el diagnóstico o resolución del ruido delantero. Patinamiento de transmisión, calentamiento, daño de roscas, daño estructural o fallas de seguridad requieren diagnóstico antes de continuar el uso. La afinación, los frenos y los trámites confirmados forman parte del historial; la revisión mecánica restante conserva su alcance específico.
 
 Resultado de inspección: pendiente. Presupuesto de reparaciones: pendiente. No se ha diagnosticado el vehículo ni contactado al vendedor desde el asistente.
 

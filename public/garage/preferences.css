@@ -28,7 +28,7 @@ html[data-theme=night] .vehicle-art img{filter:drop-shadow(0 13px 9px #0005)}
 html[data-theme=night] .vehicle-art .art-disc{border-color:#9acdc229;background:radial-gradient(circle,#7497991c,transparent 70%)}
 html[data-theme=night] .fit-card .vehicle-art .art-disc{border-color:#dfba9929;background:radial-gradient(circle,#b8887319,transparent 70%)}
 html[data-theme=night] .art-disc:before,html[data-theme=night] .art-disc:after{background:#b2cfdb16}
-html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .fit-card .vehicle-art figcaption,html[data-theme=night] .case-number,html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .hero-score span,html[data-theme=night] .card-bottom p{color:#bdc9d1}
+html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .fit-card .vehicle-art figcaption,html[data-theme=night] .case-number,html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .hero-status span,html[data-theme=night] .card-bottom p{color:#bdc9d1}
 html[data-theme=night] .vehicle-stats{border-color:var(--line)}
 html[data-theme=night] .round-arrow{border-color:#839eaa}
 html[data-theme=night] .round-arrow:hover,html[data-theme=night] .icon-button:hover{background:var(--ink);color:var(--paper)}
@@ -36,13 +36,9 @@ html[data-theme=night] .section-heading h2 em,html[data-theme=night] .budget-int
 html[data-theme=night] .segmented{background:#21333f;border-color:#405360}
 html[data-theme=night] .segmented button{color:#b8c6d2}
 html[data-theme=night] .segmented button.selected{background:#86bdaf;color:#152a29;box-shadow:0 2px 7px #0003}
-html[data-theme=night] .rating-card{background:linear-gradient(135deg,#213c44,#192736);border-color:#3b5661}
-html[data-theme=night] .fit-rating{background:linear-gradient(135deg,#3b303d,#202838);border-color:#544955}
-html[data-theme=night] .score-ring{background:conic-gradient(from -90deg,var(--sage) calc(var(--score)*1%),#3c515a 0)}
-html[data-theme=night] .score-ring:before{background:#203440}
-html[data-theme=night] .fit-rating .score-ring{background:conic-gradient(from -90deg,var(--clay) calc(var(--score)*1%),#514554 0)}
-html[data-theme=night] .fit-rating .score-ring:before{background:#332f3d}
-html[data-theme=night] .rating-table thead th,html[data-theme=night] .document-body th{background:#263947}
+html[data-theme=night] .fact-card{background:linear-gradient(135deg,#213c44,#192736);border-color:#3b5661}
+html[data-theme=night] .fit-facts{background:linear-gradient(135deg,#3b303d,#202838);border-color:#544955}
+html[data-theme=night] .facts-table thead th,html[data-theme=night] .document-body th{background:#263947}
 html[data-theme=night] .comparison-table tbody td:nth-child(2){background:#22343d50}
 html[data-theme=night] .comparison-table thead th{border-color:#567078}
 html[data-theme=night] .decision-band{background:#243c4b;color:#edf0ef}
@@ -74,4 +70,4 @@ html[data-theme=night] .document-body code{background:#2a3d49}
 html[data-theme=night] .toast{background:#dcebe6;color:#192c31}
 @media(max-width:760px){.preferences-bar{padding-top:14px}.preference-controls{gap:6px}.preference-controls select{font-size:9px;padding:6px 17px 6px 10px;max-width:94px}.theme-switch{font-size:9px;min-width:72px;padding:6px 9px}.portfolio-back{font-size:9px}.exchange-settings{padding:13px;gap:8px 12px}.exchange-settings>p{font-size:9px;flex-basis:100%}}
 @media(max-width:360px){.preferences-bar{gap:8px;flex-wrap:wrap}.preference-controls{margin-left:auto}.theme-switch{min-width:58px;padding-inline:7px}.theme-switch .icon{width:12px}.preference-controls select{max-width:86px;padding-right:12px}.document-body .guide-facts{grid-template-columns:1fr;gap:3px}.guide-facts dd{margin-bottom:10px}}
-@media print{.preferences-bar{display:none}.exchange-settings{break-inside:avoid;background:white;color:#333;border-color:#aaa}.exchange-settings label,.exchange-input,.exchange-input input{color:#222}.exchange-settings input{border-color:#888}.document-language-note{background:#eee;color:#333}.document-language-note button{display:none}html[data-theme=night]{color-scheme:light;--paper:#fff;--ink:#25382f;--muted:#5a625d;--line:#bbb;--sage:#446954;--clay:#ad5238;--soft:#eee}html[data-theme=night] .site-header{background:white}html[data-theme=night] .rating-card,html[data-theme=night] .budget-card,html[data-theme=night] .budget-section{background:#f0f1eb;color:var(--ink)}html[data-theme=night] .score-ring:before{background:#f0f1eb}html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .hero-score span{color:#556258}}
+@media print{.preferences-bar{display:none}.exchange-settings{break-inside:avoid;background:white;color:#333;border-color:#aaa}.exchange-settings label,.exchange-input,.exchange-input input{color:#222}.exchange-settings input{border-color:#888}.document-language-note{background:#eee;color:#333}.document-language-note button{display:none}html[data-theme=night]{color-scheme:light;--paper:#fff;--ink:#25382f;--muted:#5a625d;--line:#bbb;--sage:#446954;--clay:#ad5238;--soft:#eee}html[data-theme=night] .site-header{background:white}html[data-theme=night] .fact-card,html[data-theme=night] .budget-card,html[data-theme=night] .budget-section{background:#f0f1eb;color:var(--ink)}html[data-theme=night] .vehicle-title>span,html[data-theme=night] .stat-label,html[data-theme=night] .vehicle-art figcaption,html[data-theme=night] .hero-status span{color:#556258}}

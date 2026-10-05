@@ -57,7 +57,7 @@
   document.querySelector('#exchange-rate').value=prefs.rate;
   document.querySelector('#exchange-error').textContent='';
   document.querySelectorAll('[data-money]').forEach(element=>{element.innerHTML=money(Number(element.dataset.money))+'<span> '+prefs.currency+'</span>';});
-  document.querySelector('#fit-price-context').textContent=t('Los {price} no demuestran una ganga. Primero, inspección independiente, prueba de la automática y documentos en orden.',{price:money(105000,true)});
+  document.querySelector('#fit-price-context').textContent=t('Compra confirmada por {price}. Afinación y frenos realizados; emplacado, a nombre de Josue y sin adeudos. Seguimiento mecánico: ruido delantero y transmisión.',{price:money(96000,true)});
   document.querySelectorAll('.budget-currency,.budget-card-top .small-label').forEach(element=>element.textContent=prefs.currency);
  }
  function apply() {

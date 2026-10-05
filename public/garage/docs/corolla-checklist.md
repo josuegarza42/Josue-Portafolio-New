@@ -1,6 +1,14 @@
 # Corolla 2010 XLE automático - lista para el mecánico
 
-Fecha: **21 de septiembre de 2026**. Ya comprado. Kilometraje actual reportado por Josue: **290,000 km**, el 21 de septiembre de 2026; fotografía pendiente. El anuncio histórico de 185,200 km se conserva como antecedente por conciliar. **Ninguna casilla representa una revisión ya realizada.**
+Actualizado: **5 de octubre de 2026**. Ya comprado. Kilometraje actual corregido por Josue: **250,000 km**; fotografía pendiente. El anuncio histórico de 185,200 km se conserva como antecedente. **Las casillas mecánicas no representan revisiones ya realizadas.**
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
+
+- [x] Emplacamiento realizado.
+- [x] Titularidad a nombre de Josue.
+- [x] Sin adeudos ni pagos pendientes.
+
+Servicios recientes confirmados: cambio de aceite, limpieza del cuerpo de aceleración, bujías y filtro. Registrados en la [bitácora](MAINTENANCE_LOG.md); el tipo de filtro y los detalles de los trabajos están por documentar. Las revisiones de esta lista siguen pendientes.
 
 Configuración de referencia: motor 1.8 de familia 2ZR-FE, automática convencional de cuatro velocidades. Cotejar NIV e identificación antes de aplicar boletines, pedir piezas o elegir fluidos. Fuentes y alcance detallados en la [evaluación](ASSESSMENT_2026-09-21.md).
 
@@ -88,7 +96,7 @@ Un boletín técnico de diagnóstico y un llamado a revisión son cosas distinta
 ## 9. Mantenimiento y desgaste general a este kilometraje
 
 - [ ] Medir y registrar niveles según manual; observar fugas y humo. Si requiere reposiciones de aceite, anotar cantidad y kilómetros para investigar consumo/fuga, sin asumir un defecto de otra motorización.
-- [ ] Verificar aceite/filtro, bujías, filtros, refrigerante, líquido de frenos y servicio de transmisión con facturas. Programar pendientes según manual exacto y condiciones de uso.
+- [ ] Archivar comprobantes del aceite, limpieza del cuerpo de aceleración, bujías y filtro ya realizados. Confirmar el tipo de filtro y revisar historial de refrigerante, líquido de frenos y transmisión. Programar pendientes según manual exacto y condiciones de uso.
 - [ ] Revisar frenos, llantas (DOT, dibujo, grietas y desgaste), batería, soportes y guardapolvos de semiejes.
 - [ ] Revisar A/C al ralentí y en marcha, luces, seguros, dos llaves y asientos/cinturones.
 - [ ] Inspeccionar corrosión, soldaduras o reparación estructural e indicios de inundación.

@@ -24,6 +24,8 @@ La sección conserva `noindex, nofollow` y se excluye del sitemap. Esto controla
 
 ## Actualizar el contenido
 
+La actualización del 5 de octubre de 2026 se hizo directamente en este portafolio a petición de Josue: Corolla con 250,000 km y servicios recientes; Fit comprado por $96,000 con afinación y frenos. Incluye portada, estadísticas de compra, presupuesto, guías en inglés, Markdown y vistas del lector. La confirmación posterior del mismo día registra ambos autos emplacados, a nombre de Josue y sin adeudos ni pagos pendientes. Josue confirma Fit EX y Corolla XLE. La sección Datos sustituye el ranking editorial por especificaciones mexicanas con fuente y operaciones de compra visibles. No se asignan puntos de confiabilidad o seguridad ni consumos no medidos. Se conserva el ancla `#ranking` por compatibilidad y `ranking.js` sólo anima las imágenes. Las cifras desconocidas de servicios y trámites son costos históricos por registrar, no deudas. `GARAGE_IMPORT.json` conserva las huellas de la importación original para que el importador detecte estas modificaciones y no las sobrescriba. Antes de volver a importar desde `Carro`, reconciliar allí estas novedades; no regenerar desde expedientes antiguos.
+
 1. Actualizar los expedientes en el proyecto original `Carro`. Cuando cambien los Markdown, regenerar su web con su `build_content.py`, según las instrucciones de ese proyecto.
 2. Desde la raíz de este portafolio, ejecutar:
 
@@ -41,13 +43,13 @@ Se conservan las claves `garage.josue.2010.v1` para listas y presupuestos, `gara
 
 El guardado pertenece al origen del navegador. El antiguo servidor del garaje en el puerto `8768`, el portafolio en `4321` y el dominio publicado tienen almacenamientos separados. La integración no transfiere automáticamente marcas o presupuestos guardados en otro origen. Las exportaciones originales siguen disponibles; los expedientes importados son independientes de esas marcas personales.
 
-## Verificación
+## Verificación de la integración inicial
 
 - Los 29 archivos importados coinciden con la fuente; los documentos y PDF no fueron reescritos.
 - Astro y la compilación de producción completan correctamente; la ruta produce `dist/garage/index.html` y los recursos/descargas necesarios existen en el resultado.
 - Acceso exclusivo desde el icono del pie de página y regreso desde el encabezado a la portada correspondiente al idioma.
-- Apertura de expedientes, ranking por perfil, persistencia de revisión al recargar y cálculo en MXN/USD.
+- Apertura de expedientes, persistencia de revisión al recargar y cálculo en MXN/USD. El ranking de la integración inicial se sustituyó por datos y fórmulas el 5 de octubre de 2026.
 - Cambio de idioma y tema, conservados al recargar.
 - Revisión visual de escritorio y móvil; las marcas e importes de prueba se restablecieron.
 
-La comparación y la información de los autos mantienen la fecha y el alcance de los expedientes originales. Incorporarlos al portafolio no actualiza ni verifica por sí mismo el estado de los vehículos.
+Los antecedentes y fuentes técnicas conservan sus fechas originales. La actualización del 5 de octubre registra lo confirmado por Josue; la fecha exacta y costos de cada servicio siguen por documentar.

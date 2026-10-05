@@ -1,8 +1,16 @@
-# Evaluación de compra — Honda Fit 2010 automático
+# Evaluación y seguimiento — Honda Fit 2010 EX automático
 
-Fecha: **21 de septiembre de 2026**. Precio solicitado: **$105,000 MXN**. Kilometraje declarado: **200,000 km**.
+**Versión EX automática confirmada por Josue el 5 de octubre de 2026.** La referencia publicada para México es 1.5 L EX 5AT; identificación por NIV y equipo instalado por cotejar.
 
-## Veredicto
+Actualizado: **5 de octubre de 2026**. **Compra confirmada por Josue en $96,000 MXN**; precio solicitado histórico: $105,000 MXN. Kilometraje declarado por el vendedor: **200,000 km**; sin nueva lectura reportada.
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
+
+Josue confirma afinación y servicio de frenos recientes. Registrar detalles, fecha exacta, odómetro, costo y comprobantes en la [bitácora](MAINTENANCE_LOG.md). Queda pendiente documentar la revisión de la transmisión y el diagnóstico o resolución del ruido delantero; el servicio de frenos no confirma por sí solo esa reparación.
+
+## Evaluación previa a la compra · 21 de septiembre de 2026
+
+El análisis, las propuestas de negociación y los escenarios siguientes se conservan como antecedentes. El precio final confirmado es $96,000 MXN.
 
 **Candidato razonable para inspeccionar; oportunidad de compra todavía no acreditada. No cerraría en $105,000 mientras el ruido delantero siga sin diagnóstico.** La presentación visual y la disposición del vendedor a permitir una revisión son favorables. Faltan elementos decisivos: estado de la transmisión, diagnóstico de suspensión, mantenimiento y documentos.
 
@@ -26,7 +34,7 @@ No se recibieron factura, comprobante de baja, comprobantes de servicios, result
 |---|---|---|
 | Modelo y uso | El Fit de esta generación es un compacto práctico, con buena utilización del espacio y motor 1.5 L. Una prueba mexicana de época valora su espacio y consumo. | Es un modelo razonable para uso cotidiano; la calidad del ejemplar depende de mantenimiento y estado actual. |
 | Antigüedad y kilómetros | Aproximadamente 16 años y 200,000 km: unos 12,500 km por año. El cálculo usa el año modelo, no una fecha de primera circulación comprobada. | No es un kilometraje anual desproporcionado, pero sí hay desgaste acumulado. El promedio no valida el odómetro ni predice vida restante. |
-| Automática | Se documentan versiones mexicanas 2010 LX/EX 5AT; la referencia de esta generación muestra cinco marchas. La versión exacta del ejemplar sigue pendiente. | Revisar acoplamiento, cambios, temperatura, códigos e historial. No tratarlo como un Fit CVT de otra generación ni dar por sana la caja. |
+| Automática | Se documentan versiones mexicanas 2010 LX/EX 5AT; la referencia de esta generación muestra cinco marchas. La versión estaba pendiente en septiembre; Josue confirma EX el 5 de octubre de 2026. | Revisar acoplamiento, cambios, temperatura, códigos e historial. No tratarlo como un Fit CVT de otra generación ni dar por sana la caja. |
 | Ruido delantero | Falla reconocida, sin diagnóstico. Puede involucrar elementos de suspensión o dirección de distinto costo y gravedad. | Obtener revisión inferior y cotización antes de fijar el precio. Si hay daño estructural o problema serio de dirección, descartarlo. |
 | Exterior en fotos | Vehículo rojo, aparentemente completo, con presentación general cuidada. Se aprecia posible opacidad o amarillamiento en faros; luz y resolución limitan el juicio. | Verificar pintura, alineación de paneles, reparaciones y faros de cerca. Las fotos no descartan choques ni reparaciones estructurales. |
 | Interior en fotos | Tablero y asientos parecen completos; tapicería con variaciones de tono y señales de uso. Se ve selector automático. El volante lleva cubierta. | Revisar desgaste bajo la cubierta, asiento del conductor, humedad, cinturones, testigos y funcionamiento real. No hay lectura fiable de odómetro en el material revisado. |
@@ -37,7 +45,7 @@ No se recibieron factura, comprobante de baja, comprobantes de servicios, result
 
 ## Aclaraciones sobre transmisión, fiabilidad y mantenimiento
 
-La configuración mexicana 2010 LX/EX automática de referencia utiliza **cinco marchas y convertidor de par: automática convencional, no CVT**. Confirmar versión, procedencia e identificación del ejemplar antes de dar por cerrada la especificación; otras configuraciones o mercados pueden diferir.
+La configuración mexicana 2010 LX/EX automática de referencia utiliza **cinco marchas y convertidor de par: automática convencional, no CVT**. La versión EX ya está confirmada por Josue; cotejar procedencia e identificación por NIV del ejemplar; otras configuraciones o mercados pueden diferir.
 
 Esto no significa que la caja sea indestructible ni «la más barata». El costo de reparación depende de daño, piezas, disponibilidad y taller; una manual suele ser más sencilla, aunque su embrague también se desgasta. No se ha cotizado una reparación de esta caja ni se puede predecir su vida restante. Tampoco debe asumirse que toda CVT tenga el mismo riesgo o vaya a fallar.
 
@@ -45,7 +53,7 @@ Esto no significa que la caja sea indestructible ni «la más barata». El costo
 
 La [lista específica para el mecánico](INSPECTION_CHECKLIST_2026-09-21.md) documenta los puntos comentados: bujías que se aflojan y posibles daños de rosca/bobina, mantenimiento de holgura de válvulas, semiejes, manija de cajuela/tapa de combustible, revisión de caja y campañas de bolsas de aire. Distingue reportes de generación, mantenimiento programado y desgaste general; incluye fuentes y límites de mercado.
 
-Registrar trabajos únicamente cuando se confirmen en la [bitácora de mantenimiento y gastos](MAINTENANCE_LOG.md). La [comparación con el Corolla comprado](../COMPARISON_FIT_COROLLA_2026-09-21.md) conserva el criterio de uso y fiabilidad sin tratar la compra del Fit como concluida.
+La afinación y el servicio de frenos confirmados se registran en la [bitácora de mantenimiento y gastos](MAINTENANCE_LOG.md). La [comparación con el Corolla](../COMPARISON_FIT_COROLLA_2026-09-21.md) incorpora ambas compras confirmadas y sus servicios recientes.
 
 ## Cuánto cambia la operación con las reparaciones
 

@@ -1,6 +1,10 @@
 # Evaluación - Toyota Corolla 2010 XLE automático
 
-Fecha: **21 de septiembre de 2026**. Vehículo ya comprado; precio reportado de **$125,500 MXN** y **290,000 km actuales reportados por Josue** el 21 de septiembre de 2026. Los 185,200 km se conservan únicamente como dato del anuncio histórico; la diferencia queda por conciliar, sin causa establecida.
+Actualizado: **5 de octubre de 2026**. Vehículo ya comprado; precio reportado de **$125,500 MXN** y **250,000 km actuales corregidos por Josue**. Los 185,200 km se conservan únicamente como dato del anuncio histórico.
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
+
+Josue confirma cambio de aceite, limpieza del cuerpo de aceleración, cambio de bujías y filtro recientes. Fechas exactas, costos, especificaciones y comprobantes pendientes en la [bitácora](MAINTENANCE_LOG.md).
 
 ## Veredicto
 
@@ -15,7 +19,7 @@ La buena impresión personal de Josue al comprarlo es favorable. La carpeta toda
 | Precio | $125,500 frente a $127,000 solicitados | Descuento real de $1,500; no equivale a descuento respecto de una tasación |
 | Comparables históricos | El expediente del 2 de septiembre recoge anuncios de $115,000, $137,000 y $138,000 con diferentes kilómetros | No se volvieron a verificar ni son precios de cierre; permiten contexto histórico, no asegurar una ganga |
 | Estado aparente | Josue lo calificó como «más que impecable» | Es una valoración personal; no sustituye revisión mecánica ni historial |
-| Kilometraje actual reportado | 290,000 km | Dato confirmado por Josue; fotografía e historial pendientes. Priorizar caja, enfriamiento, consumo de aceite y desgaste; no diagnosticar por odómetro solamente |
+| Kilometraje actual reportado | 250,000 km | Corregido por Josue el 5 de octubre de 2026; fotografía e historial pendientes. Priorizar caja, enfriamiento, consumo de aceite y desgaste; no diagnosticar por odómetro solamente |
 | Caja | Referencia 1.8 XLE AT con cuatro marchas | Automática convencional, no CVT en esta configuración; estado y especificación física pendientes de cotejo |
 | Factura | Referencia Dalton con aparente condición de usado | Agencia emisora no acredita que sea la factura de primera venta; preservar cadena completa |
 | Uso | Sedán adecuado para uso diario y viajes si está al día | Comodidad y consumo deben juzgarse en el uso real; no se midieron consumos de esta unidad |
@@ -45,9 +49,9 @@ No trasladar al Corolla el programa de holgura de válvulas del Fit ni extrapola
 ## Plan después de la compra
 
 1. Completar inspección de referencia y reunir historial. Cualquier señal de seguridad, calentamiento o patinamiento requiere atención antes de seguir con uso normal.
-2. Si no hay comprobante reciente, establecer servicio de aceite/filtro y verificar lo demás según manual exacto y diagnóstico. Registrar producto, cantidad, fecha, kilometraje y factura; no inventar intervalos ni cambiar todas las piezas por edad sin evaluarlas.
+2. Documentar el aceite, la limpieza del cuerpo de aceleración, las bujías y el filtro ya realizados; confirmar el tipo de filtro. Registrar producto, cantidad, fecha, kilometraje y factura para programar próximos servicios según manual exacto y uso real.
 3. Vigilar nivel de aceite y refrigerante siguiendo el manual. Anotar cualquier reposición con kilometraje para distinguir consumo de fugas; todavía no existe medición de consumo de aceite de esta unidad.
-4. Completar archivo legal, seguro y emplacamiento pendiente de confirmar. Las referencias históricas de costos no se actualizan automáticamente.
+4. Archivar comprobantes del emplacamiento y titularidad ya confirmados; registrar seguro y vigencia cuando se proporcionen. No hay adeudos ni pagos pendientes, según Josue. Los importes históricos faltantes son datos por registrar.
 5. Registrar cada gasto en [la bitácora](MAINTENANCE_LOG.md). Los $125,500 son precio de compra, no costo total de adquisición y puesta al día.
 
 ## Fuentes y límites

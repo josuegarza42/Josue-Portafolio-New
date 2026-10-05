@@ -1,6 +1,10 @@
-# Honda Fit 2010 - mantenimiento y gastos
+# Honda Fit 2010 EX - mantenimiento y gastos
 
-Creado el 21 de septiembre de 2026. **Compra aún en evaluación; no hay servicios ni pagos confirmados.** Kilometraje declarado por el vendedor: 200,000 km; lectura física e historial pendientes.
+**Versión EX automática confirmada por Josue el 5 de octubre de 2026.** La referencia publicada para México es 1.5 L EX 5AT; identificación por NIV y equipo instalado por cotejar.
+
+Actualizado el 5 de octubre de 2026. **Josue confirma compra por $96,000 MXN, afinación y servicio de frenos recientes.** La fecha exacta, el odómetro de los servicios, su costo y el detalle de piezas quedan por documentar. Kilometraje declarado por el vendedor: 200,000 km; sin una nueva lectura reportada.
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
 
 ## Trabajos realizados
 
@@ -8,18 +12,23 @@ Completar sólo con trabajos confirmados. Conservar factura/orden y especificaci
 
 | Fecha | Odómetro | Servicio y motivo | Taller | Piezas/fluido/especificación | Costo MXN | Comprobante | Próximo control |
 |---|---:|---|---|---|---:|---|---|
-| Sin registros confirmados | — | — | — | — | — | — | — |
+| Reciente; reportado el 2026-10-05 | Por documentar | Afinación | Por documentar | Trabajos, piezas y fluidos por detallar | Por documentar | Confirmada por Josue; comprobante pendiente | Según alcance, manual y fecha/km del servicio |
+| Reciente; reportado el 2026-10-05 | Por documentar | Servicio de frenos | Por documentar | Trabajos y piezas por detallar | Por documentar | Confirmado por Josue; comprobante pendiente | Según trabajo realizado y revisión |
 
 ## Gastos de adquisición y puesta al día
 
 | Concepto | Monto MXN | Estado |
 |---|---:|---|
-| Precio solicitado | $105,000 | No acordado ni pagado; no contabilizar como gasto |
+| Compra | $96,000 | Confirmada por Josue; comprobante pendiente de archivar |
+| Precio solicitado histórico | $105,000 | Antecedente del anuncio; no sumar al gasto |
 | Inspección y diagnóstico delantero | Por cotizar | Pendiente |
 | Reparación del ruido delantero | Por diagnosticar y cotizar | Alcance desconocido |
-| Trámites, seguro y traslado | Por cotizar | Pendientes |
-| Servicio inicial y otras reparaciones | Por evaluar | Evitar duplicar partidas de la reparación delantera |
-| Costo total | Pendiente | No hay compra confirmada |
+| Trámites | Importe pagado por registrar | Emplacamiento y titularidad realizados, sin pagos pendientes |
+| Adeudos y pagos pendientes | $0 | Confirmado por Josue; no sumar como costo histórico |
+| Seguro y traslado | Por documentar | Registro histórico; póliza y vigencia por confirmar |
+| Afinación y servicio de frenos | Por documentar | Realizados, según Josue; importes pendientes |
+| Otras reparaciones | Por evaluar | Evitar duplicar partidas de la reparación delantera |
+| Costo total | Pendiente | $96,000 corresponde únicamente al precio de compra informado |
 
 ## Observaciones y reposiciones
 

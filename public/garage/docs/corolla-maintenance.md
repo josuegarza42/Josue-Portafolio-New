@@ -1,6 +1,8 @@
 # Corolla 2010 XLE - mantenimiento y gastos
 
-Creado el 21 de septiembre de 2026. **Josue reporta 290,000 km actuales el 21 de septiembre de 2026.** Fotografía del odómetro y comprobantes de servicios pendientes. Los 185,200 km corresponden al anuncio histórico; la diferencia está por conciliar, sin causa determinada.
+Actualizado el 5 de octubre de 2026. **Josue confirma 250,000 km actuales y reporta servicios recientes.** La fecha de este registro corresponde al reporte; la fecha exacta y el odómetro de cada servicio quedan por documentar. Los 185,200 km corresponden al anuncio histórico.
+
+**Situación administrativa confirmada por Josue el 5 de octubre de 2026:** emplacado, a su nombre y sin adeudos ni pagos pendientes. Los importes históricos y comprobantes por archivar no representan deudas pendientes.
 
 ## Trabajos realizados
 
@@ -8,16 +10,20 @@ Completar sólo con servicios confirmados. Conservar factura/orden; anotar produ
 
 | Fecha | Odómetro | Servicio y motivo | Taller | Piezas/fluido/especificación | Costo MXN | Comprobante | Próximo control |
 |---|---:|---|---|---|---:|---|---|
-| Sin registros confirmados | — | — | — | — | — | — | — |
+| Reciente; reportado el 2026-10-05 | Por documentar | Cambio de aceite | Por documentar | Especificación y cantidad por documentar | Por documentar | Confirmado por Josue; comprobante pendiente | Según manual y fecha/km del servicio |
+| Reciente; reportado el 2026-10-05 | Por documentar | Limpieza del cuerpo de aceleración | Por documentar | Detalle por documentar | Por documentar | Confirmado por Josue; comprobante pendiente | Según funcionamiento y diagnóstico |
+| Reciente; reportado el 2026-10-05 | Por documentar | Cambio de bujías | Por documentar | Marca y especificación por documentar | Por documentar | Confirmado por Josue; comprobante pendiente | Según manual y fecha/km del servicio |
+| Reciente; reportado el 2026-10-05 | Por documentar | Cambio de filtro | Por documentar | Tipo de filtro por confirmar | Por documentar | Confirmado por Josue; comprobante pendiente | Según tipo de filtro y manual |
 
 ## Gastos de adquisición y puesta al día
 
 | Concepto | Monto MXN | Estado |
 |---|---:|---|
 | Compra | $125,500 | Confirmada por Josue; comprobante pendiente de archivar |
-| Trámites | Por documentar | No sumar estimaciones históricas como pagos |
+| Trámites | Importe pagado por registrar | Emplacamiento y titularidad realizados, sin pagos pendientes |
+| Adeudos y pagos pendientes | $0 | Confirmado por Josue; no sumar como costo histórico |
 | Seguro | Por documentar | Vigencia y póliza pendientes de archivar |
-| Inspección/mantenimiento/reparaciones | Por documentar | Sin trabajos confirmados en esta actualización |
+| Mantenimiento reciente | Por documentar | Aceite, limpieza del cuerpo de aceleración, bujías y filtro confirmados por Josue |
 | Costo total documentado | Pendiente | $125,500 corresponde únicamente al precio de compra informado |
 
 ## Observaciones y reposiciones
